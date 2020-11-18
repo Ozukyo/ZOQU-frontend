@@ -7,11 +7,12 @@
 
 
   .top-footer {
-    display: grid;
-    grid-template-columns: 20% 80%;
+    display: flex;
+    justify-items: flex-start;
 
     img {
-      margin: auto;
+      padding: 0 20px;
+      margin: 0 50px;
     }
   }
 
