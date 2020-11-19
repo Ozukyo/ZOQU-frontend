@@ -1,11 +1,16 @@
+@mixin set-flex() {
+  display: flex; //oddelegowac to do metody wspolnej
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   background: url("../../assets/images/login-bg") no-repeat center center/cover;
   width: 100%;
   height: 800px;
   margin-bottom: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include set-flex();
 
 }
 
@@ -16,21 +21,15 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   padding: 80px 110px;
-  display: flex; //oddelegowac to do metody wspolnej
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  @include set-flex();
 
 
 
 
   .login-by-social {
     margin-bottom: 32px;
-    display: flex; //oddelegowac to do metody wspolnej
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include set-flex();
 
     h3 {
       align-self: flex-start;
@@ -68,13 +67,12 @@
       }
     }
 
-
   }
 
   .login-form {
 
     .login-item {
-      display: flex; //oddelegowac to do metody wspolnej
+      display: flex;
       flex-direction: column;
 
       input {
