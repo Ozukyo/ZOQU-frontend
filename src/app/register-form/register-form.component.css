@@ -1,3 +1,98 @@
+.form-container {
+  background: url("../../assets/images/register-bg.jpeg") no-repeat center center/cover;
+  width: 100%;
+  height: 1200px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.form-wrapper {
+  height: 1000px;
+  width: 650px;
+  background: rgba(196, 192, 192, 0.6);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper .login-by-social {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper .login-by-social h3 {
+  align-self: flex-start;
+  margin-left: 10px;
+  font-size: 36px;
+}
+.form-wrapper .login-by-social .btn-google {
+  margin-top: 20px;
+  background: rgba(214, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+.form-wrapper .login-by-social .btn-fb {
+  background: rgba(56, 94, 169, 0.8);
+}
+.form-wrapper .login-by-social .btn {
+  width: 380px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.form-wrapper .login-by-social .btn img {
+  padding-left: 25px;
+  padding-right: 45px;
+}
+.form-wrapper .login-form .login-item {
+  display: flex;
+  flex-direction: column;
+}
+.form-wrapper .login-form .login-item input {
+  height: 42px;
+  width: 380px;
+  border-radius: 12px;
+  background: rgba(249, 249, 249, 0.53);
+  outline: none;
+  border: none;
+  margin-bottom: 30px;
+}
+.form-wrapper .login-form .login-item label {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.form-wrapper .login-form .login-item label span {
+  color: #3b8095;
+}
+.form-wrapper .submit-btn {
+  width: 190px;
+  height: 43px;
+  background: #7C4B77;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.form-wrapper a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
 
 /*# sourceMappingURL=register-form.component.css.map */
