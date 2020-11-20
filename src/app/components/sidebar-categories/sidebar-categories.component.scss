@@ -1,0 +1,9 @@
+
+.container ,.item ul, .dropdown input[type="checkbox"] {
+    display: none;
+
+}
+#main-cat:checked ~ .container, .item input:checked ~ .ul {
+  display: block;
+}
+
