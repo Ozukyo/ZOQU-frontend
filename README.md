@@ -1,5 +1,9 @@
 # ZOQUFrontend
 
+https://github.com/szniemiec/zoqu-back
+
+# ZOQUFrontend
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
 ## Development server
