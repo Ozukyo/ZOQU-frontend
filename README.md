@@ -1,4 +1,4 @@
-# ZOQUFrontend
+# ZOQUBackend
 
 https://github.com/szniemiec/zoqu-back
 
