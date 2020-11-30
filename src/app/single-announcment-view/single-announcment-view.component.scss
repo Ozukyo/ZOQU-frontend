@@ -11,6 +11,8 @@
     border-radius: 38px;
     border: 1px solid black;
     margin-bottom: 45px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 

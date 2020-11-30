@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SingleAnnouncmentViewComponent } from './single-announcment-view/single-announcment-view.component';
 import { PhotosViewComponent } from './single-announcment-view/photos-view/photos-view.component';
+import { AnnouncmentInfoComponent } from './single-announcment-view/announcment-info/announcment-info.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PhotosViewComponent } from './single-announcment-view/photos-view/photo
     HeaderComponent,
     FooterComponent,
     SingleAnnouncmentViewComponent,
-    PhotosViewComponent
+    PhotosViewComponent,
+    AnnouncmentInfoComponent
   ],
   imports: [
     BrowserModule,

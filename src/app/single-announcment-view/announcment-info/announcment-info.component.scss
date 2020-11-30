@@ -1,0 +1,95 @@
+%btn-style {
+  border-radius: 12px;
+  height: 60px;
+  width: 130px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.container {
+  height: 786px;
+  width: 580px;
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-right: 70px;
+  padding-top: 30px;
+
+
+  .basic-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .product-title {
+      color: #6C63FF;
+      font-size: 48px;
+      line-height: 1.3;
+
+    }
+
+    .product-price {
+      font-size: 40px;
+    }
+
+    .product-info{
+      margin-top: 50px;
+      color: #454444;
+      font-size: 24px;
+      text-align: left;
+    }
+
+
+  }
+
+  .contact-info {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+      .seller-profile-pic {
+
+      }
+      .right-info-section {
+        margin-left: 20px;
+
+        .p-wrapper {
+          margin-bottom: 15px;
+          margin-top: 20px;
+
+          .seller-name {
+            font-size: 25px;
+          }
+
+          .see-more {
+            text-transform: uppercase;
+            font-size: 15px;
+            color: #777575;
+          }
+        }
+
+        .contact-buttons {
+          margin-bottom: 60px;
+          display: flex;
+
+          .message-btn {
+            @extend %btn-style;
+            background: #7C4B77;
+            margin-right: 10px;
+
+          }
+
+          .call-btn {
+            @extend %btn-style;
+            background: #6C63FF;
+          }
+        }
+      }
+    }
+  }
+
