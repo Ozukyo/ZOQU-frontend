@@ -11,7 +11,7 @@
   border: 1px solid black;
   margin-bottom: 45px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-/*# sourceMappingURL=single-announcment-view.component.css.map */
+/*# sourceMappingURL=single-announcement-view.component.css.map */
