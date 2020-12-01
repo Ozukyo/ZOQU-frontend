@@ -8,10 +8,14 @@
   height: 1695px;
   background: #F9F9F9;
   border-radius: 38px;
-  border: 1px solid black;
   margin-bottom: 45px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 795px) {
+  .container .announcment-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*# sourceMappingURL=single-announcement-view.component.css.map */

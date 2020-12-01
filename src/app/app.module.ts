@@ -9,6 +9,7 @@ import { PhotosViewComponent } from './single-announcement-view/photos-view/phot
 import { AnnouncementInfoComponent } from './single-announcement-view/announcement-info/announcement-info.component';
 import {AnnouncementDetailsComponent} from './single-announcement-view/announcement-details/announcement-details.component';
 import { LeftSideViewComponent } from './single-announcement-view/left-side-view/left-side-view.component';
+import { LocalizationInfoComponent } from './single-announcement-view/localization-info/localization-info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LeftSideViewComponent } from './single-announcement-view/left-side-view
     PhotosViewComponent,
     AnnouncementInfoComponent,
     AnnouncementDetailsComponent,
-    LeftSideViewComponent
+    LeftSideViewComponent,
+    LocalizationInfoComponent
   ],
   imports: [
     BrowserModule,
