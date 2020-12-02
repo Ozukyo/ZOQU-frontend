@@ -1,6 +1,4 @@
-$font-color_secondary: #84209d;
-$font-color-primary: #000000;
-$background-color: #FDFDFD;
+@import "../config";
 
 * {
   background-color: $background-color;
@@ -81,10 +79,10 @@ $background-color: #FDFDFD;
   .search-bar {
     input {
       width: 640px;
-      background: #F9F9F9;
+      background: $input-bar-background;
       border: 1px solid #D1D1D1;
       box-sizing: border-box;
-      box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15);
+      box-shadow: $box-shadow;
       border-radius: 12px;
     }
   }

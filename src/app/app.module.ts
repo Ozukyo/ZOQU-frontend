@@ -4,6 +4,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AnnouncmentsViewComponent } from './announcments-view/announcments-view.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { SidebarCategoriesComponent } from './components/sidebar-categories/sidebar-categories.component';
 import { PersonalInfoEditPageComponent } from './personal-info-edit-page/personal-info-edit-page.component';
 
 @NgModule({
@@ -11,6 +16,11 @@ import { PersonalInfoEditPageComponent } from './personal-info-edit-page/persona
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    AnnouncmentsViewComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
+    CategoriesComponent,
+    SidebarCategoriesComponent,
     PersonalInfoEditPageComponent
   ],
   imports: [
