@@ -10,6 +10,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { SidebarCategoriesComponent } from './components/sidebar-categories/sidebar-categories.component';
 import { PersonalInfoEditPageComponent } from './personal-info-edit-page/personal-info-edit-page.component';
+import { ProfilePageHeaderComponent } from './profile-page-header/profile-page-header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PersonalInfoEditPageComponent } from './personal-info-edit-page/persona
     RegisterFormComponent,
     CategoriesComponent,
     SidebarCategoriesComponent,
-    PersonalInfoEditPageComponent
+    PersonalInfoEditPageComponent,
+    ProfilePageHeaderComponent
   ],
   imports: [
     BrowserModule,
