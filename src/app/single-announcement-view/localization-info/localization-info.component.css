@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-top: 40px;
+}
+.container .address-info {
+  margin-top: 20px;
+  font-size: 24px;
+}
+.container .address-info p {
+  margin-bottom: 15px;
+}
+
+/*# sourceMappingURL=localization-info.component.css.map */
