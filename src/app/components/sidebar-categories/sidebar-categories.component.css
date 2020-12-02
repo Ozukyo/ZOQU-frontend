@@ -1,0 +1,5 @@
+.category #main-cat:checked ~ .subcategories-area, .category .subcat input:checked ~ ul {
+  display: block;
+}
+
+/*# sourceMappingURL=sidebar-categories.component.css.map */
