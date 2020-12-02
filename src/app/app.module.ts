@@ -24,7 +24,7 @@ import { ProfileContactbarComponent } from './profile-contactbar/profile-contact
     CategoriesComponent,
     SidebarCategoriesComponent,
     PersonalInfoEditPageComponent,
-    ProfilePageHeaderComponent
+    ProfilePageHeaderComponent,
     ProfileContactbarComponent
   ],
   imports: [
