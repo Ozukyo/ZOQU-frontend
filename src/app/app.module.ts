@@ -12,6 +12,7 @@ import { SidebarCategoriesComponent } from './components/sidebar-categories/side
 import { PersonalInfoEditPageComponent } from './personal-info-edit-page/personal-info-edit-page.component';
 import { ProfilePageHeaderComponent } from './profile-page-header/profile-page-header.component';
 import { ProfileContactbarComponent } from './profile-contactbar/profile-contactbar.component';
+import {ProfileAboutMeComponent} from './profile-about-me/profile-about-me.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProfileContactbarComponent } from './profile-contactbar/profile-contact
     SidebarCategoriesComponent,
     PersonalInfoEditPageComponent,
     ProfilePageHeaderComponent,
-    ProfileContactbarComponent
+    ProfileContactbarComponent,
+    ProfileAboutMeComponent
   ],
   imports: [
     BrowserModule,
