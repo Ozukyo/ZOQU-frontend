@@ -1,0 +1,30 @@
+.-bar-container {
+  display: grid;
+  justify-items: flex-end;
+}
+.-bar-container .bar {
+  width: 940px;
+  height: 145px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #F9F9F9;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+.-bar-container .bar .bar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.-bar-container .bar .bar-item img {
+  width: 32px;
+  height: 32px;
+}
+.-bar-container .bar .bar-item p {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+/*# sourceMappingURL=profile-contactbar.component.css.map */
