@@ -9,6 +9,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { SidebarCategoriesComponent } from './components/sidebar-categories/sidebar-categories.component';
+import { PersonalInfoEditPageComponent } from './personal-info-edit-page/personal-info-edit-page.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,11 @@ import { SidebarCategoriesComponent } from './components/sidebar-categories/side
     HeaderComponent,
     FooterComponent,
     AnnouncmentsViewComponent,
-    FooterComponent,
     LoginFormComponent,
-    FooterComponent,
     RegisterFormComponent,
     CategoriesComponent,
     SidebarCategoriesComponent,
+    PersonalInfoEditPageComponent
   ],
   imports: [
     BrowserModule,
