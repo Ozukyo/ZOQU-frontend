@@ -19,6 +19,7 @@ import {ProfileAboutMeComponent} from './profile-about-me/profile-about-me.compo
     AnnouncmentsViewComponent,
     CategoriesComponent,
     SidebarCategoriesComponent,
+    PersonalInfoEditPageComponent,
     ProfilePageHeaderComponent,
     ProfileContactbarComponent,
     ProfileAboutMeComponent
