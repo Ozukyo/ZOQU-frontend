@@ -2,24 +2,22 @@
 
 .container {
   //width: 100vw;
+  //width: 100%;
+  margin: 0 20px;
+  //position: absolute;
+  background-color: #6b7d85;
+
   input {
     display: none;
   }
 
-  nav {
-    //width: 100%;
-    margin: 0 20px;
-    //position: absolute;
-    //background-color: #6b7d85;
 
-  }
-
-  nav > ul {
+  nav > ul { // uklad poziomy kat głownych
     position: relative;
     display: flex;
     justify-content: space-between;
     //width: 100%;
-    padding: 0;
+    //padding: 0;
 
     li:hover {
       background-color: #00fdfd;
@@ -35,7 +33,6 @@
     content: '';
     position: relative;
     float: right;
-    //margin-left: 10px;
   }
 
   nav ul li {
@@ -43,39 +40,43 @@
     transition: 0.5s;
   }
 
-  nav > ul > li > a {
+  nav > ul > li > a { //label or a tag
     padding: 15px 25px;
   }
 }
 
 .subcategories-area {
   padding: 40px 40px 0 40px;
-  background-color:$background-color;
+  background-color: $background-color;
   border-top: 5px solid #d3d3d3;
   z-index: 1;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  //width: 1170px;
+
   top: -9999px;
 }
 
-nav ul li:hover ul.subcategories-area {
+nav ul li:hover .subcategories-area { //pozniej zamiast li dac category
   top: 100%
 }
 
-nav ul.subcategories-area ul {
+nav .subcategories-area {
   width: auto;
   padding: 0 10px;
   margin-bottom: 20px;
+  //margin-right: 10px;
 
-  h3 {
-    font-size: 1.5em;
-    color: $font-color_secondary;
+  label a {
+    font-size: 1.3em;
+    color: black;
+    padding: 15px 0;
+    list-style: none;
   }
 }
 
-nav ul.subcategories-area ul li a {
+nav .subcategories-area ul li a {
+  margin-right: 10px;
   margin-top: 5px;
-  color: black;
+  color: $font-color_secondary;
 }

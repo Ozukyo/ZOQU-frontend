@@ -1,14 +1,14 @@
+.container {
+  margin: 0 20px;
+  background-color: #6b7d85;
+}
 .container input {
   display: none;
-}
-.container nav {
-  margin: 0 20px;
 }
 .container nav > ul {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 0;
 }
 .container nav > ul li:hover {
   background-color: #00fdfd;
@@ -41,23 +41,26 @@
   top: -9999px;
 }
 
-nav ul li:hover ul.subcategories-area {
+nav ul li:hover .subcategories-area {
   top: 100%;
 }
 
-nav ul.subcategories-area ul {
+nav .subcategories-area {
   width: auto;
   padding: 0 10px;
   margin-bottom: 20px;
 }
-nav ul.subcategories-area ul h3 {
-  font-size: 1.5em;
-  color: #84209d;
+nav .subcategories-area label a {
+  font-size: 1.3em;
+  color: black;
+  padding: 15px 0;
+  list-style: none;
 }
 
-nav ul.subcategories-area ul li a {
+nav .subcategories-area ul li a {
+  margin-right: 10px;
   margin-top: 5px;
-  color: black;
+  color: #84209d;
 }
 
 /*# sourceMappingURL=categories.component.css.map */

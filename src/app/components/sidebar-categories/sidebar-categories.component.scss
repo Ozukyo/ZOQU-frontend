@@ -1,9 +1,19 @@
+//
+//.container ,.category, .dropdown input[type="checkbox"] {
+//    display: none;
+//
+//}
+.category {
 
-.container ,.item ul, .dropdown input[type="checkbox"] {
-    display: none;
+  //input[type="checkbox"], .subcategories-area, .subcat ul {
+  //  display: none;
+  //}
 
+  //#main-cat:checked ~ .container, .item input:checked ~ .ul {
+  //  display: block;
+  //}
+
+  #main-cat:checked ~ .subcategories-area, .subcat input:checked ~ ul {
+    display: block;
+  }
 }
-#main-cat:checked ~ .container, .item input:checked ~ .ul {
-  display: block;
-}
-
