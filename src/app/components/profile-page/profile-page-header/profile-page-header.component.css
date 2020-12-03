@@ -1,0 +1,32 @@
+.profile-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-header-container .background-image {
+  width: 100%;
+  height: 384px;
+  background: url("../../../../assets/images/profile-bg-image.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile-header-container .background-image .name-wrapper {
+  background: rgba(0, 0, 0, 0.43);
+  border-radius: 15px;
+  width: 412px;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-header-container .background-image img {
+  margin-bottom: 12px;
+}
+.profile-header-container .background-image .name {
+  font-size: 48px;
+  color: #fff;
+}
+
+/*# sourceMappingURL=profile-page-header.component.css.map */

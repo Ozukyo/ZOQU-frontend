@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 80px;
+  margin-left: 60px;
+  height: 786px;
+  width: 580px;
+
+  .main-photo {
+    width: 580px;
+    height: 652px;
+    background: url("../../../../assets/images/Rectangle 41.png") no-repeat center center/cover;
+  }
+
+  .other-photos {
+    margin-top: 23px;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: space-between;
+
+
+    .photo-1 {
+      width: 117px;
+      height: 112px;
+      background: url("../../../../assets/images/Rectangle 41.png") no-repeat center center/cover;
+    }
+  }
+
+
+}
