@@ -19,6 +19,7 @@ import {PersonalInfoEditPageComponent} from './components/personal-info-edit-pag
 import {ProfilePageHeaderComponent} from './components/profile-page/profile-page-header/profile-page-header.component';
 import {ProfileContactbarComponent} from './components/profile-page/profile-contactbar/profile-contactbar.component';
 import {ProfileAboutMeComponent} from './components/profile-page/profile-about-me/profile-about-me.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {ProfileAboutMeComponent} from './components/profile-page/profile-about-m
     AnnouncementInfoComponent,
     AnnouncementDetailsComponent,
     LeftSideViewComponent,
-    LocalizationInfoComponent
+    LocalizationInfoComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
