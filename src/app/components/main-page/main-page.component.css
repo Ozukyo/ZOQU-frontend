@@ -1,28 +1,33 @@
 .body {
-  padding: 3em 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 3em 3em;
+}
+.body h1 {
+  font-size: 48px;
+  margin: 1em 0;
+}
+.body p {
+  text-align: justify;
 }
 
 .carousel {
-  background: #EEE;
+  background: transparent;
 }
 
 .carousel-cell {
   width: 66%;
-  height: 200px;
+  height: 400px;
   margin-right: 10px;
-  background: #8C8;
   border-radius: 5px;
-  counter-increment: gallery-cell;
+}
+.carousel-cell img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-/* cell number */
 .carousel-cell:before {
   display: block;
   text-align: center;
-  content: counter(gallery-cell);
+  content: "";
   line-height: 200px;
   font-size: 80px;
   color: white;
@@ -40,15 +45,87 @@
   border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.15);
 }
-.container-1 .column {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
+
+.column {
+  padding: 1.5em;
+}
+.column img {
+  padding-bottom: 2em;
+}
+
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: space-around;
+}
+
+.announcement-card {
+  width: 258px;
+  height: 326px;
+  background: #F9F9F9;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+  margin: 20px 15px;
+  padding-top: 20px;
+}
+.announcement-card:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+.announcement-card .title {
+  color: #6C63FF;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.announcement-card .price {
+  font-size: 18px;
+}
+
+.story-box-1 {
+  padding: 2em 3em;
+  margin: 3em 0;
+  background-color: #6b7d85;
+}
+.story-box-1 p {
+  font-size: 21px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 35% 65%;
   justify-content: center;
   align-items: center;
+  grid-auto-flow: dense;
+  gap: 20px;
 }
-.container-1 .column img {
-  padding-bottom: 2em;
+
+.reverse {
+  grid-template-columns: 65% 35%;
+}
+
+.story-box-2 {
+  padding: 2em 3em;
+  margin: 3em 0;
+}
+.story-box-2 p {
+  font-size: 21px;
+  text-align: justify;
+  line-height: 1.5em;
+}
+.story-box-2 div {
+  order: 1;
+}
+.story-box-2 img {
+  order: 2;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main-page.component.css.map */
