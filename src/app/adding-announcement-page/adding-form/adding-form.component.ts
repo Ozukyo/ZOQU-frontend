@@ -12,4 +12,7 @@ export class AddingFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  activateInput(elem: any): void {
+    elem.click();
+  }
 }
