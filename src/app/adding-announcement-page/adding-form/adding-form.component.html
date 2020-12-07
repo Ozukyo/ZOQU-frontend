@@ -6,12 +6,49 @@
         <label for="title">Tytuł:
           <span>*</span>
           <br>
-          <input type="text">
+          <input type="text" id="title" name="title">
           <p>pozostało znaków: 70</p>
         </label>
       </div>
       <div class="category-select">
+        <label for="categories">Wybór kategorii:
+          <span>*</span>
+          <br>
+          <select name="categories" id="categories">
+            <option value="#">Ona</option>
+            <option value="#">On</option>
+            <option value="#">Kosmetyki</option>
+            <option value="#">Dom i ogród</option>
+          </select>
+        </label>
+      </div>
+      <div class="description-form">
+        <label for="description">Opis:</label>
+        <span>*</span>
+        <br>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <p>pozostało znaków: 7000</p>
+      </div>
+      <div class="material-color-detail">
+        <label for="color">Kolor produktu:
+          <br>
+          <select name="color" id="color">
+            <option value="#">Niebieski</option>
+            <option value="#">Czarny</option>
+            <option value="#">Biały</option>
+            <option value="#">Zielony</option>
+          </select>
+        </label><br>
 
+        <label for="material">Materiał produktu:
+          <br>
+          <select name="material" id="material">
+            <option value="#">Akryl</option>
+            <option value="#">Drewno</option>
+            <option value="#">Szkło</option>
+            <option value="#">Kryształ</option>
+          </select>
+        </label>
       </div>
 
     </div>
