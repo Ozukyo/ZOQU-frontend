@@ -121,3 +121,20 @@
 .slider > a:focus {
   background: #000;
 }
+
+#chosen-slide{
+  object-fit: cover;
+  max-width: 500px;
+max-height: 500px;
+  cursor: pointer;
+}
+.thumbnail{
+  object-fit: cover;
+  max-width: 100px;
+  max-height: 100px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.thumbnail:hover{
+  opacity: 1;
+}
