@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns: 30%;
+}
+.container .about-me-wrapper {
+  width: 381px;
+  height: 1187px;
+  background: linear-gradient(0deg, #F9F9F9, #F9F9F9), linear-gradient(0deg, #F9F9F9, #F9F9F9), #F9F9F9;
+  color: pink;
+  border-radius: 30px;
+  margin-left: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .about-me-wrapper .about-me-info {
+  margin: 20px 0;
+}
+.container .about-me-wrapper .about-me-info p {
+  text-align: justify;
+  margin: 0 30px;
+}
+.container .about-me-wrapper .about-me-info > h3, .container .about-me-wrapper .localization-info {
+  text-align: center;
+}
+.container .about-me-wrapper .localization-info {
+  margin-top: 10px;
+}
+.container .about-me-wrapper .localization-info img {
+  margin-bottom: 15px;
+}
+.container .about-me-wrapper h3 {
+  color: #6C63FF;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+.container .about-me-wrapper p {
+  color: #454444;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=profile-about-me.component.css.map */
