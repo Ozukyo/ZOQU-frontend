@@ -20,8 +20,8 @@ import {ProfilePageHeaderComponent} from './components/profile-page/profile-page
 import {ProfileContactbarComponent} from './components/profile-page/profile-contactbar/profile-contactbar.component';
 import {ProfileAboutMeComponent} from './components/profile-page/profile-about-me/profile-about-me.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
-import { AddingFormComponent } from './adding-announcement-page/adding-form/adding-form.component';
-import { AddingAnnouncementPageComponent } from './adding-announcement-page/adding-announcement-page.component';
+import { AddingFormComponent } from './components/adding-announcement-page/adding-form/adding-form.component';
+import { AddingAnnouncementPageComponent } from './components/adding-announcement-page/adding-announcement-page.component';
 
 @NgModule({
   declarations: [
