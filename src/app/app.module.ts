@@ -20,6 +20,8 @@ import {ProfilePageHeaderComponent} from './components/profile-page/profile-page
 import {ProfileContactbarComponent} from './components/profile-page/profile-contactbar/profile-contactbar.component';
 import {ProfileAboutMeComponent} from './components/profile-page/profile-about-me/profile-about-me.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { AddingFormComponent } from './adding-announcement-page/adding-form/adding-form.component';
+import { AddingAnnouncementPageComponent } from './adding-announcement-page/adding-announcement-page.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +37,15 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     ProfilePageHeaderComponent,
     ProfileContactbarComponent,
     ProfileAboutMeComponent,
-    FooterComponent,
     SingleAnnouncementViewComponent,
     PhotosViewComponent,
     AnnouncementInfoComponent,
     AnnouncementDetailsComponent,
     LeftSideViewComponent,
     LocalizationInfoComponent,
-    MainPageComponent
+    MainPageComponent,
+    AddingFormComponent,
+    AddingAnnouncementPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,5 +54,4 @@ import { MainPageComponent } from './components/main-page/main-page.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
