@@ -22,6 +22,7 @@ import {ProfileAboutMeComponent} from './components/profile-page/profile-about-m
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AddingFormComponent } from './components/adding-announcement-page/adding-form/adding-form.component';
 import { AddingAnnouncementPageComponent } from './components/adding-announcement-page/adding-announcement-page.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AddingAnnouncementPageComponent } from './components/adding-announcemen
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

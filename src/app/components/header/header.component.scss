@@ -4,6 +4,10 @@
   background-color: $background-color;
 }
 
+a {
+  cursor: pointer;
+}
+
 .search-bar {
 
   label {
@@ -96,6 +100,7 @@
     li {
       font-size: 18px;
       padding-right: 30px;
+
     }
 
     button {
