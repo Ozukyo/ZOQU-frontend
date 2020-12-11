@@ -20,6 +20,7 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   @include set-flex();
+  margin-bottom: 120px;
 
   .login-by-social {
     margin-bottom: 32px;
