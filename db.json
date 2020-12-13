@@ -2,8 +2,9 @@
   "announcements": [
     {
       "id": 1,
-      "title": "tytuł",
-      "description": "to jest opis ogloszenia"
+      "title": "Bransoletka z koralików akrylowych rozm 20 cm Hit,vintage, must have!",
+      "price": "25,00 zł",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n    sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet,\n    consectetur adipiscing elit, sed do eiusmod tempor incididuntLorem ipsum dolor sit amet,\n    consectetur adipiscing elit, sed do eiusmod tempor\n    incididuntLorem ipsum dolor sit amet, consectetur adipiscing elit,\n    sed do eiusmod tempor incididunt"
     }
   ],
   "comments": [
@@ -14,7 +15,15 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "id": 1,
+    "name": "Adam",
+    "surname": "Kowalski",
+    "email": "craftsman@gmail.com",
+    "website": "www.craftsman.com",
+    "number": "534-242-567",
+    "about-me-info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua  Ut enim ad minim veniam, quis nostrud  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Lorem ipsum dolor sit amet,\n        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n        quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\n        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+    "city": "Kraków"
+
   },
   "categories": [
     {
