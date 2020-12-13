@@ -1,9 +1,220 @@
 {
   "announcements": [
-    { "id": 1, "title": "tytuł", "description": "to jest opis ogloszenia" }
+    {
+      "id": 1,
+      "title": "tytuł",
+      "description": "to jest opis ogloszenia"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "ON",
+      "subcategories": [
+        {
+          "name": "Moda",
+          "subcategories": [
+            "T-shirty",
+            "Koszule",
+            "Bluzy",
+            "Spodnie",
+            "Krótkie spodenki",
+            "Kurtki i płaszcze",
+            "Garnitury"
+          ]
+        },
+        {
+          "name": "Biżuteria",
+          "subcategories": [
+            "Naszyjniki",
+            "Pierścionki",
+            "Bransoletki",
+            "Spinki do mankietów"
+          ]
+        },
+        {
+          "name": "Dodatki",
+          "subcategories": [
+            "Skarpetki",
+            "Nakrycia głowy",
+            "Etui i pokrowce",
+            "Torby i nerki",
+            "Muchy, krawaty, poszetki",
+            "Okulary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ONA",
+      "subcategories": [
+        {
+          "name": "Moda",
+          "subcategories": [
+            "T-shirty",
+            "Bluzy",
+            "Swetry",
+            "Żakiety",
+            "Spodnie",
+            "Spódnice",
+            "Kurtki i płaszcze",
+            "Bielizna"
+          ]
+        },
+        {
+          "name": "Biżuteria",
+          "subcategories": [
+            "Naszyjniki",
+            "Pierścionki",
+            "Bransoletki",
+            "Brożki",
+            "Zawieszki i wisiorki",
+            "Zestawy",
+            "Inne"
+          ]
+        },
+        {
+          "name": "Dodatki",
+          "subcategories": [
+            "Paski",
+            "Zegarki",
+            "Nakrycia głowy",
+            "Torby i nerki",
+            "Chusty, szaliki",
+            "Rękawiczki",
+            "Skarpetki",
+            "Okulary",
+            "Inne"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "KOSMETYKI",
+      "subcategories": [
+        {
+          "name": "Do włosów",
+          "subcategories": [
+            "Szampony",
+            "Odżywki",
+            "Oleje"
+          ]
+        },
+        {
+          "name": "Do twarzy",
+          "subcategories": [
+            "Kremy",
+            "Maski",
+            "Oleje",
+            "Mydła"
+          ]
+        },
+        {
+          "name": "Do ciała",
+          "subcategories": [
+            "Kremy",
+            "Odżywki",
+            "Peelingi",
+            "Oleje",
+            "Mydła"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "DOM i OGRÓD",
+      "subcategories": [
+        {
+          "name": "Kuchnia",
+          "subcategories": [
+            "Noże kuchenne",
+            "Miski, talerze, kuchnie, garnki",
+            "Deski do krojenia",
+            "Tekstylia",
+            "Inne"
+          ]
+        },
+        {
+          "name": "Łazienka",
+          "subcategories": [
+            "Tekstylia",
+            "Przechowywanie",
+            "Akcesoria",
+            "Inne"
+          ]
+        },
+        {
+          "name": "Salon",
+          "subcategories": [
+            "Stoły",
+            "Krzesła",
+            "Fotele, pufy",
+            "Kanapy",
+            "Regały",
+            "Stoliki kawowe",
+            "Komody"
+          ]
+        },
+        {
+          "name": "Oświetlenie",
+          "subcategories": [
+            "Sufitowe",
+            "Ścienne",
+            "Stojące"
+          ]
+        },
+        {
+          "name": "Ozdoby",
+          "subcategories": [
+            "Ramy",
+            "Świece",
+            "Zegary",
+            "Obrazy i plakaty",
+            "Donice i wazony",
+            "Dywany, dyawniki",
+            "Rzeźby",
+            "Inne"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "ZWIERZĘTA",
+      "subcategories": [
+        {
+          "name": "Legowiska dla zwierząt"
+        },
+        {
+          "name": "Obroże i smycze dla zwierząt"
+        },
+        {
+          "name": "Zabawki dla zwierząt"
+        },
+        {
+          "name": "Ubranka dla zwierząt"
+        },
+        {
+          "name": "Inne"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "AKCESORIA"
+    }
+  ]
 }
