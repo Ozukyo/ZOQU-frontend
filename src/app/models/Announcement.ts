@@ -4,7 +4,7 @@ export interface Announcement {
   id: number;
   publish_date: Data;
   title: string;
-  // category_id: Category;
+  // category_id: Category.ts;
   description: string;
   price: number;
   // details_id: Enum;
