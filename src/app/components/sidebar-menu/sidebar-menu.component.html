@@ -3,41 +3,41 @@
     <div class="title-wrapper"></div>
     <div class="nav-title">Kategorie</div>
     <ul class="main-categories">
-      <li>
+      <li class="subcategory" (click)="onShowSubcategory($event)">
         <a href="#">ONA
           <i class="fas fa-caret-down"></i>
         </a>
-        <ul>
+        <ul class="she-subcategories" >
           <li><a href="">Moda</a></li>
           <li><a href="">Biżuteria</a></li>
           <li><a href="">Dodatki</a></li>
         </ul>
         </li>
-      <li>
-        <a href="#">ON
+      <li class="subcategory" (click)="onShowSubcategory($event)">
+        <a href="#" >ON
           <i class="fas fa-caret-down"></i>
         </a>
-        <ul>
+        <ul class="he-subcategories">
           <li><a href="">Moda</a></li>
           <li><a href="">Biżuteria</a></li>
           <li><a href="">Dodatki</a></li>
         </ul>
       </li>
-      <li>
+      <li class="cosmetics-subcategory" (click)="onShowSubcategory($event)">
         <a href="#">KOSMETYKI
           <i class="fas fa-caret-down"></i>
         </a>
-        <ul>
+        <ul class="subcategories">
           <li><a href="">Do włosów</a></li>
           <li><a href="">Do twarzy</a></li>
           <li><a href="">Do ciała</a></li>
         </ul>
       </li>
-      <li>
+      <li class="house-subcategory" (click)="onShowSubcategory($event)">
         <a href="#">DOM I OGRÓD
           <i class="fas fa-caret-down"></i>
         </a>
-        <ul>
+        <ul class="subcategories">
           <li><a href="">Kuchnia</a></li>
           <li><a href="">Łazienka</a></li>
           <li><a href="">Salon</a></li>
@@ -45,11 +45,11 @@
           <li><a href="">Ozdoby</a></li>
         </ul>
       </li>
-      <li>
+      <li class="animals-subcategory" (click)="onShowSubcategory($event)">
         <a href="#">ZWIERZĘTA
           <i class="fas fa-caret-down"></i>
         </a>
-        <ul>
+        <ul class="animals-subcategories">
           <li><a href="">Legowiska</a></li>
           <li><a href="">Obroże i smycze</a></li>
           <li><a href="">Zabawki</a></li>
@@ -57,7 +57,7 @@
           <li><a href="">Inne</a></li>
         </ul>
       </li>
-      <li><a href="#">AKCESORIA</a></li>
+      <li class="accessories-subcategory"><a href="#">AKCESORIA</a></li>
     </ul>
   </nav>
 </div>
