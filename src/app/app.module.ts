@@ -22,6 +22,7 @@ import {ProfileAboutMeComponent} from './components/profile-page/profile-about-m
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AddingFormComponent } from './components/adding-announcement-page/adding-form/adding-form.component';
 import { AddingAnnouncementPageComponent } from './components/adding-announcement-page/adding-announcement-page.component';
+import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AddingAnnouncementPageComponent } from './components/adding-announcemen
     LocalizationInfoComponent,
     MainPageComponent,
     AddingFormComponent,
-    AddingAnnouncementPageComponent
+    AddingAnnouncementPageComponent,
+    SidebarMenuComponent
   ],
   imports: [
     BrowserModule,
