@@ -1,24 +1,25 @@
 .sidebar-container {
   display: grid;
   grid-template-columns: 20%;
+  margin-left: 20px;
 
 }
 .sidebar {
   width: 300px;
   height: 1400px;
-  background: #f3eeee;
+  background: #f3f3f3;
   border-radius: 30px;
 
 
   .nav-title {
     font-size: 25px;
-    //color: #5C5555;
-    border: 1px solid rgba(127, 67, 117, 0.3);
+    color: #4b4646;
+    border-bottom: 1px dotted rgba(127, 67, 117, 0.6);
     padding-top: 20px;
     padding-bottom: 30px;
     letter-spacing: 1px;
     text-align: center;
-    border-radius: 30px;
+    //border-radius: 30px;
   }
 
     .main-categories {
@@ -26,20 +27,27 @@
       width: 100%;
       list-style: none;
 
+
       li {
         line-height: 50px;
         border-bottom: 1px solid rgba(0,0,0,0.2);
+        z-index: 1;
 
+
+        &:focus {
+          background: #84209d;
+        }
 
         .show {
           display: block;
         }
 
 
+
         a {
           text-decoration: none;
-          color: #000;
-          font-size: 20px;
+          color: #5C5555;
+          font-size: 18px;
           padding-left: 20px;
           display: block;
           width: 100%;
@@ -47,11 +55,13 @@
           position: relative;
 
 
+
           &:hover {
             font-weight: 600;
             //color: #570095
             //background: rgba(127, 67, 117, 0.3);
             border-left-color:rgba(127, 67, 117, 0.1);
+
 
             i {
               color: #84209d;
@@ -77,10 +87,12 @@
         li {
           line-height: 40px;
           border-bottom: none;
+          list-style: none;
 
           a {
             font-size: 18px;
             padding-left: 60px;
+            text-decoration: none;
           }
         }
           ul {

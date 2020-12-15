@@ -2,12 +2,12 @@
   <nav class="sidebar">
     <div class="title-wrapper"></div>
     <div class="nav-title">Kategorie</div>
-    <ul class="main-categories">
+    <ul class="main-categories" (click)="onActive()">
       <li class="subcategory" (click)="onShowSubcategory($event)">
         <a href="#">ONA
           <i class="fas fa-caret-down"></i>
         </a>
-        <ul class="she subcategories" >
+        <ul class="she subcategories">
           <li><a href="#">Moda
             <i class="fas fa-caret-down"></i>
           </a>
@@ -22,18 +22,76 @@
               <li><a href="#">Bielizna</a></li>
             </ul>
           </li>
-          <li><a href="">Biżuteria</a></li>
-          <li><a href="">Dodatki</a></li>
+          <li><a href="#">Biżuteria
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Pierścionki</a></li>
+              <li><a href="#">Naszyjniki</a></li>
+              <li><a href="#">Bransoletki</a></li>
+              <li><a href="#">Brożki</a></li>
+              <li><a href="#">Zawieszki i wisiorki</a></li>
+              <li><a href="#">Zestawy</a></li>
+              <li><a href="#">Inne</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Dodatki
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Paski</a></li>
+              <li><a href="#">Zegarki</a></li>
+              <li><a href="#">Nakrycia głowy</a></li>
+              <li><a href="#">Torebki i nerki</a></li>
+              <li><a href="#">Chusty, szaliki</a></li>
+              <li><a href="#">Rękawiczki</a></li>
+              <li><a href="#">Skarpety</a></li>
+              <li><a href="#">Okulary</a></li>
+              <li><a href="#">Inne</a></li>
+            </ul>
+          </li>
         </ul>
-        </li>
+      </li>
       <li class="subcategory" (click)="onShowSubcategory($event)">
-        <a href="#" >ON
+        <a href="#">ON
           <i class="fas fa-caret-down"></i>
         </a>
         <ul class="he subcategories">
-          <li><a href="">Moda</a></li>
-          <li><a href="">Biżuteria</a></li>
-          <li><a href="">Dodatki</a></li>
+          <li><a href="#">Moda
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">T-shirty</a></li>
+              <li><a href="#">Koszule</a></li>
+              <li><a href="#">Bluzy</a></li>
+              <li><a href="#">Spodnie</a></li>
+              <li><a href="#">Krótkie spodenki</a></li>
+              <li><a href="#">Kurtki i płaszcze</a></li>
+              <li><a href="#">Garnitury</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Biżuteria
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Naszyjniki</a></li>
+              <li><a href="#">Pierścionki</a></li>
+              <li><a href="#">Bransoletki</a></li>
+              <li><a href="#">Spinki do mankietów</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Dodatki
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Skarpety</a></li>
+              <li><a href="#">Nakrycia głowy</a></li>
+              <li><a href="#">Etui i pokrowce</a></li>
+              <li><a href="#">Torby i nerki</a></li>
+              <li><a href="#">Muchy, krawaty, poszetki</a></li>
+              <li><a href="#">Okulary</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li class="subcategory" (click)="onShowSubcategory($event)">
@@ -41,9 +99,34 @@
           <i class="fas fa-caret-down"></i>
         </a>
         <ul class="cosmetics subcategories">
-          <li><a href="">Do włosów</a></li>
-          <li><a href="">Do twarzy</a></li>
-          <li><a href="">Do ciała</a></li>
+          <li><a href="#">Do włosów
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Szampony</a></li>
+              <li><a href="#">Odżywki</a></li>
+              <li><a href="#">Oleje</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Do twarzy
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Kremy</a></li>
+              <li><a href="#">Maski</a></li>
+              <li><a href="#">Oleje</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Do ciała
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Kremy</a></li>
+              <li><a href="#">Odżywki</a></li>
+              <li><a href="#">Peelingi</a></li>
+              <li><a href="#">Oleje</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li class="subcategory" (click)="onShowSubcategory($event)">
@@ -51,11 +134,63 @@
           <i class="fas fa-caret-down"></i>
         </a>
         <ul class="house subcategories">
-          <li><a href="">Kuchnia</a></li>
-          <li><a href="">Łazienka</a></li>
-          <li><a href="">Salon</a></li>
-          <li><a href="">Oświetlenie</a></li>
-          <li><a href="">Ozdoby</a></li>
+          <li><a href="#">Kuchnia
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Noże kuchenne</a></li>
+              <li><a href="#">Miski, talerze, kubki, garnki</a></li>
+              <li><a href="#">Deski do krojenia</a></li>
+              <li><a href="#">Tekstylia</a></li>
+              <li><a href="#">Inne</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Łazienka
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Tesktylia</a></li>
+              <li><a href="#">Przechowywanie</a></li>
+              <li><a href="#">Akcesoria</a></li>
+              <li><a href="#">Inne</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Salon
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Stoły</a></li>
+              <li><a href="#">Krzesłą</a></li>
+              <li><a href="#">fotele, pufy</a></li>
+              <li><a href="#">Kanapy</a></li>
+              <li><a href="#">Regały</a></li>
+              <li><a href="#">Stoliki kawowe</a></li>
+              <li><a href="#">Komody</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Oświetlenie
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Sufitowe</a></li>
+              <li><a href="#">Ścienne</a></li>
+              <li><a href="#">Stojące</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Ozdoby
+            <i class="fas fa-caret-down"></i>
+          </a>
+            <ul class="sub-subcategories">
+              <li><a href="#">Ramy</a></li>
+              <li><a href="#">Świece</a></li>
+              <li><a href="#">Zegary</a></li>
+              <li><a href="#">Obrazy i plakaty</a></li>
+              <li><a href="#">Donice i wazony</a></li>
+              <li><a href="#">Dywany, dywaniki</a></li>
+              <li><a href="#">Rzeźby</a></li>
+              <li><a href="#">Inne</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li class="subcategory" (click)="onShowSubcategory($event)">
