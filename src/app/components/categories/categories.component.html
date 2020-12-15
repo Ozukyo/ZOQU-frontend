@@ -9,24 +9,24 @@
 </head>
 <body>
 
-<div class="container">
+<div  class="container">
   <nav>
     <ul>
       <li>
-        <div class="category">
+        <div *ngFor="let category of (categoriesList | async)" class="category">
 
           <label><input type="checkbox" id="main-cat"/>ON</label>
           <div class="subcategories-area">
             <div class="subcat">
               <label><input type="checkbox" id="submain-cat-1"/><a href="#">Moda</a></label>
               <ul>
-                <li><a href="#">T-shirty</a></li>
-                <li><a href="#">Koszule</a></li>
-                <li><a href="#">Bluzy</a></li>
-                <li><a href="#">Spodnie</a></li>
-                <li><a href="#">Krótkie spodenki</a></li>
-                <li><a href="#">Kurtki i płaszcze</a></li>
-                <li><a href="#">Garnitury</a></li>
+                <li *ngFor="let subcategory of category.subcategories"><a href="#">{{ subcategory.name }}</a></li>
+<!--                <li><a href="#">Koszule</a></li>-->
+<!--                <li><a href="#">Bluzy</a></li>-->
+<!--                <li><a href="#">Spodnie</a></li>-->
+<!--                <li><a href="#">Krótkie spodenki</a></li>-->
+<!--                <li><a href="#">Kurtki i płaszcze</a></li>-->
+<!--                <li><a href="#">Garnitury</a></li>-->
               </ul>
             </div>
             <div class="subcat">
