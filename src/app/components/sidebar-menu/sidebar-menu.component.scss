@@ -1,9 +1,14 @@
+.sidebar-container {
+  display: grid;
+  grid-template-columns: 20%;
 
+}
 .sidebar {
   width: 300px;
   height: 1400px;
   background: #f3eeee;
   border-radius: 30px;
+
 
   .nav-title {
     font-size: 25px;
@@ -16,7 +21,7 @@
     border-radius: 30px;
   }
 
-    ul {
+    .main-categories {
       height: 100%;
       width: 100%;
       list-style: none;
@@ -78,6 +83,16 @@
             padding-left: 60px;
           }
         }
+          ul {
+            line-height: 40px;
+            border-bottom: none;
+
+            a {
+              font-size: 14px;
+              padding-left: 100px;
+            }
+          }
+
         }
 
 
