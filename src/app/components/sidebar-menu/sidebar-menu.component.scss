@@ -34,14 +34,14 @@
         z-index: 1;
 
 
-        &:focus {
-          background: #84209d;
-        }
 
         .show {
           display: block;
         }
 
+        .active {
+          color: #84209d;
+        }
 
 
         a {
