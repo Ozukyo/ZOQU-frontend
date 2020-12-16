@@ -31,7 +31,6 @@
   height: 400px;
   margin-right: 10px;
   border-radius: 5px;
-  //counter-increment: gallery-cell;
 }
 
 .carousel-cell:before {
@@ -60,7 +59,7 @@
   padding: 1.5em;
 
   img {
-    padding-bottom: 2em
+    padding-bottom: 2em;
   }
 }
 
@@ -71,12 +70,12 @@
 }
 
 .announcement-card {
-  width: 258px;
-  height: 326px;
+  //width: 258px;
+  //height: 326px;
   background: #F9F9F9;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
   margin: 20px 15px;
-  padding-top: 20px;
+  padding: 20px;
 
   &:hover {
     cursor: pointer;
