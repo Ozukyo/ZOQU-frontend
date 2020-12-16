@@ -3,7 +3,7 @@
     <ul>
       <li *ngFor="let category of (categoriesList | async)">
         <div class="category">
-          <label><input type="checkbox" id="main-cat"/>{{category.name}}</label>
+          <label><input type="checkbox" id="main-cat"/><a href="#">{{category.name}}</a></label>
           <div class="subcategories-area">
             <div *ngFor="let subcategory of category.subcategories" class="subcat"><a href="#"></a>
               <label><input type="checkbox" id="submain-cat-1"/><a href="#">{{ subcategory.name }}</a></label>
