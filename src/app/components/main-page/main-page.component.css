@@ -8,10 +8,6 @@
 .body p {
   text-align: justify;
 }
-.body .container-1 {
-  border-radius: 12px;
-  opacity: 0.9;
-}
 
 .carousel {
   background: transparent;
@@ -47,6 +43,7 @@
   left: 226px;
   top: 885px;
   border-radius: 2px;
+  opacity: 0.9;
   background-color: rgba(0, 0, 0, 0.15);
 }
 
