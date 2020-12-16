@@ -49,8 +49,6 @@ export class CategoriesComponent implements OnInit {
         }
       }
     }
-    // console.log(word);
-    // console.log(this.isPolish);
     return word;
 
   }
