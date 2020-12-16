@@ -12,10 +12,16 @@
             <div *ngFor="let subcategory of category.subcategories" class="subcat">
               <label><input type="checkbox" id="submain-cat-1"/>
                 <a
-                [routerLink]="category.name.toLowerCase() + '/' + convertLettersToEnglish(subcategory.name.toLowerCase())">{{ subcategory.name }}
-                </a></label>
+                [routerLink]="convertLettersToEnglish(subcategory.name.toLowerCase())">
+                  {{ subcategory.name }}
+                </a>
+              </label>
               <ul>
-                <li *ngFor="let subsubcategory of subcategory.subcategories"><a href="#">{{subsubcategory}}</a></li>
+                <li *ngFor="let subsubcategory of subcategory.subcategories">
+                  <a [routerLink]="convertLettersToEnglish(subcategory.name.toLowerCase()) + '/' + convertLettersToEnglish(subsubcategory.toLowerCase())">
+                    {{subsubcategory}}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
