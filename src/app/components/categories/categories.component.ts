@@ -11,13 +11,12 @@ import {CategoryService} from '../../services/category.service';
 export class CategoriesComponent implements OnInit {
   categoriesList: Observable<Category[]>;
   letters: any = {};
-  category: any = '';
+  isPolish = false;
 
   constructor(private categoryService: CategoryService) {
   }
 
   ngOnInit(): void {
-    const categoryName = this.category.name;
     this.categoriesList = this.categoryService.getCategories();
     this.letters = {
       261: 'a',
@@ -30,11 +29,33 @@ export class CategoriesComponent implements OnInit {
       378: 'z',
       380: 'z'
     };
-    Object.keys(this.letters).map((key, index) => {
-      console.log(this.letters[key]);
-    });
-    console.log(categoryName);
+
   }
 
-//   transformLetters()
+  public convertLettersToEnglish(word: any): string {
+    this.toggleIfPolishLetter(word);
+
+    if (!this.isPolish) {
+      return word;
+    }
+    if (word.includes(' ')) {
+      word = word.split(' ').join('-');
+    }
+    for (let i = 0; i < word.length; i++) {
+      for (const [key, value] of Object.entries(this.letters)) {
+        if (word[i] === String.fromCharCode(parseInt(key, 10))) {
+          word = word.replace(word[i], value);
+        }
+      }
+    }
+    // console.log(word);
+    // console.log(this.isPolish);
+    return word;
+
+  }
+
+  public toggleIfPolishLetter(word: any): void {
+    this.isPolish = ['ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż'].some(letter => word.includes(letter));
+  }
+
 }

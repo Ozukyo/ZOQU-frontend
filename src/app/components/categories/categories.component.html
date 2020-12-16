@@ -3,10 +3,17 @@
     <ul>
       <li *ngFor="let category of (categoriesList | async)">
         <div class="category">
-          <label><input type="checkbox" id="main-cat"/><a href="#">{{category.name}}</a></label>
+          <label><input type="checkbox" id="main-cat"/>
+            <a [routerLink]="'/' + convertLettersToEnglish(category.name.toLowerCase())">
+              {{category.name}}
+            </a>
+          </label>
           <div class="subcategories-area">
-            <div *ngFor="let subcategory of category.subcategories" class="subcat"><a href="#"></a>
-              <label><input type="checkbox" id="submain-cat-1"/><a href="#">{{ subcategory.name }}</a></label>
+            <div *ngFor="let subcategory of category.subcategories" class="subcat">
+              <label><input type="checkbox" id="submain-cat-1"/>
+                <a
+                [routerLink]="category.name.toLowerCase() + '/' + convertLettersToEnglish(subcategory.name.toLowerCase())">{{ subcategory.name }}
+                </a></label>
               <ul>
                 <li *ngFor="let subsubcategory of subcategory.subcategories"><a href="#">{{subsubcategory}}</a></li>
               </ul>
