@@ -38,9 +38,10 @@ export class CategoriesComponent implements OnInit {
     if (!this.isPolish) {
       return word;
     }
-    if (word.includes(' ')) {
+    if (word.includes(' ') || word.includes(',')) {
       word = word.split(' ').join('-');
     }
+
     for (let i = 0; i < word.length; i++) {
       for (const [key, value] of Object.entries(this.letters)) {
         if (word[i] === String.fromCharCode(parseInt(key, 10))) {
