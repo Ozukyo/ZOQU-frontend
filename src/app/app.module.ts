@@ -22,6 +22,11 @@ import {ProfileAboutMeComponent} from './components/profile-page/profile-about-m
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AddingFormComponent } from './components/adding-announcement-page/adding-form/adding-form.component';
 import { AddingAnnouncementPageComponent } from './components/adding-announcement-page/adding-announcement-page.component';
+import {AppRoutingModule} from './app-routing.module';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { CategoriesPageComponent } from './components/categories/categories-page/categories-page.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
 
 @NgModule({
@@ -47,11 +52,18 @@ import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.com
     MainPageComponent,
     AddingFormComponent,
     AddingAnnouncementPageComponent,
+    ProfilePageComponent,
+    CategoriesPageComponent,
+    AddingAnnouncementPageComponent,
     SidebarMenuComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

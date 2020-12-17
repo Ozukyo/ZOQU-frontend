@@ -15,12 +15,11 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    //width: 100%;
-    //padding: 0;
+    width: 100%;
     border-bottom: 2px solid #d3d3d3;
 
     li:hover {
-      background-color: #00fdfd;
+      background-color: rgba(113, 191, 191, 0.6);
     }
   }
 
@@ -40,13 +39,12 @@
     transition: 0.5s;
   }
 
-  nav > ul > li > a { //label or a tag
+  nav > ul > li { //label or a tag
     padding: 15px 25px;
   }
 }
 
 .subcategories-area {
-  padding: 40px 40px 0 40px;
   background-color: $background-color;
   border-top: 5px solid #d3d3d3;
   z-index: 1;
@@ -62,9 +60,11 @@ nav ul li:hover .subcategories-area { //pozniej zamiast li dac category
 
 nav .subcategories-area {
   width: auto;
+  padding: 0 10px 10px 10px;
+
+  div{
   padding: 0 10px;
-  margin-bottom: 20px;
-  //margin-right: 10px;
+}
 
   label a {
     font-size: 1.3em;
@@ -79,3 +79,4 @@ nav .subcategories-area ul li a {
   margin-top: 5px;
   color: $font-color_secondary;
 }
+

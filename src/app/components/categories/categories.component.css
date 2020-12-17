@@ -8,10 +8,11 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   border-bottom: 2px solid #d3d3d3;
 }
 .container nav > ul li:hover {
-  background-color: #00fdfd;
+  background-color: rgba(113, 191, 191, 0.6);
 }
 .container nav a {
   display: block;
@@ -26,12 +27,11 @@
   list-style: none;
   transition: 0.5s;
 }
-.container nav > ul > li > a {
+.container nav > ul > li {
   padding: 15px 25px;
 }
 
 .subcategories-area {
-  padding: 40px 40px 0 40px;
   background-color: #FDFDFD;
   border-top: 5px solid #d3d3d3;
   z-index: 1;
@@ -47,8 +47,10 @@ nav ul li:hover .subcategories-area {
 
 nav .subcategories-area {
   width: auto;
+  padding: 0 10px 10px 10px;
+}
+nav .subcategories-area div {
   padding: 0 10px;
-  margin-bottom: 20px;
 }
 nav .subcategories-area label a {
   font-size: 1.3em;
