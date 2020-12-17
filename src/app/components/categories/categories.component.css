@@ -11,7 +11,7 @@
   border-bottom: 2px solid #d3d3d3;
 }
 .container nav > ul li:hover {
-  background-color: #00fdfd;
+  background-color: rgba(113, 191, 191, 0.6);
 }
 .container nav a {
   display: block;
