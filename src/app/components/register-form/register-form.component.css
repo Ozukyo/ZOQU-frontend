@@ -62,6 +62,7 @@
   flex-direction: column;
 }
 .form-wrapper .login-form .login-item input {
+  padding: 1em 2em;
   height: 42px;
   width: 380px;
   border-radius: 12px;

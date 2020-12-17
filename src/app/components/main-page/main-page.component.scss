@@ -8,13 +8,8 @@
   p {
     text-align: justify;
   }
-
   margin: 3em 3em;
 
-  .container-1 {
-    border-radius: 12px;
-    opacity: 0.9;
-  }
 }
 
 .carousel {
@@ -31,7 +26,6 @@
   height: 400px;
   margin-right: 10px;
   border-radius: 5px;
-  //counter-increment: gallery-cell;
 }
 
 .carousel-cell:before {
@@ -53,6 +47,7 @@
   left: 226px;
   top: 885px;
   border-radius: 2px;
+  opacity: 0.9;
   background-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -60,7 +55,7 @@
   padding: 1.5em;
 
   img {
-    padding-bottom: 2em
+    padding-bottom: 2em;
   }
 }
 
@@ -71,12 +66,13 @@
 }
 
 .announcement-card {
-  width: 258px;
-  height: 326px;
+  //width: 258px;
+  //height: 326px;
+  text-align: center;
   background: #F9F9F9;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
   margin: 20px 15px;
-  padding-top: 20px;
+  padding: 20px;
 
   &:hover {
     cursor: pointer;
@@ -84,7 +80,7 @@
   }
 
   .title {
-    color: #6C63FF;
+    color: #6c63ff;
     font-size: 18px;
     text-transform: uppercase;
     margin-top: 10px;
@@ -104,7 +100,7 @@
 
   padding: 2em 3em;
   margin: 3em 0;
-  background-color: #6b7d85;
+  background-color: rgba(128, 187, 162, 0.52);
 }
 
 .grid {
@@ -123,7 +119,7 @@
 .story-box-2 {
   padding: 2em 3em;
   margin: 3em 0;
-  background: rgba(161,161,161,0.15);
+  background: rgba(161, 161, 161, 0.15);
 
   p {
     font-size: 21px;
