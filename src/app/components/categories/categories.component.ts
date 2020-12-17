@@ -12,6 +12,7 @@ export class CategoriesComponent implements OnInit {
   categoriesList: Observable<Category[]>;
   letters: any = {};
   isPolish = false;
+  mainCategory = '';
 
   constructor(private categoryService: CategoryService) {
   }
@@ -34,12 +35,12 @@ export class CategoriesComponent implements OnInit {
 
   public convertLettersToEnglish(word: any): string {
     this.toggleIfPolishLetter(word);
+    if (word.includes(' ') || word.includes(',')) {
+      word = word.split(' ').join('-');
+    }
 
     if (!this.isPolish) {
       return word;
-    }
-    if (word.includes(' ') || word.includes(',')) {
-      word = word.split(' ').join('-');
     }
 
     for (let i = 0; i < word.length; i++) {
