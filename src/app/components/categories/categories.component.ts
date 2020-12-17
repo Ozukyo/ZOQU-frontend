@@ -35,7 +35,10 @@ export class CategoriesComponent implements OnInit {
 
   public convertLettersToEnglish(word: any): string {
     this.toggleIfPolishLetter(word);
-    if (word.includes(' ') || word.includes(',')) {
+
+    if (word.includes(', ')) {
+      word = word.split(', ').join('-');
+    } else if (word.includes(' ')) {
       word = word.split(' ').join('-');
     }
 
