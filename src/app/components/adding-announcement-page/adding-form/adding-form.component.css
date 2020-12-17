@@ -1,0 +1,115 @@
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adding-form-background {
+  width: 1318px;
+  height: 1945px;
+  background: #F9F9F9;
+  border-radius: 30px;
+  margin-bottom: 200px;
+}
+
+.forms-container {
+  margin: 40px 60px;
+  display: flex;
+  flex-direction: column;
+}
+.forms-container .form-item {
+  margin-bottom: 10px;
+}
+.forms-container .add-announcement-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.forms-container .label-title {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.forms-container p {
+  color: #929A9C;
+}
+.forms-container .title-form input {
+  margin-bottom: 5px;
+}
+.forms-container input, .forms-container select {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 400px;
+  height: 40px;
+  background: #FDFDFD;
+  border: 1px solid #D1D1D1;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+.forms-container .select-medium {
+  width: 300px;
+}
+.forms-container .input-small {
+  width: 150px;
+}
+.forms-container textarea {
+  background: #FDFDFD;
+  width: 500px;
+  height: 200px;
+  border: 1px solid #D1D1D1;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  margin-top: 10px;
+}
+.forms-container span {
+  color: #63E3FF;
+}
+.forms-container .photos .photos-container {
+  height: 200px;
+  width: 350px;
+}
+.forms-container .photos .photos-container .photos-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px dashed #c2cdda;
+}
+.forms-container .photos .photos-container .photos-wrapper .add-photo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  width: 110px;
+  height: 30px;
+  background: #7C4B77;
+  opacity: 0.9;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.forms-container .photos .photos-container .photos-wrapper .add-photo-btn:hover {
+  background: #7C4B77;
+}
+.forms-container .button-element {
+  display: flex;
+  justify-content: flex-end;
+}
+.forms-container .button-element .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  width: 145px;
+  height: 45px;
+  background: #7C4B77;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=adding-form.component.css.map */

@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "app/config";
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 // html, body { height: 100%; }
