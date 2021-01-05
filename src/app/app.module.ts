@@ -26,7 +26,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { CategoriesPageComponent } from './components/categories/categories-page/categories-page.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

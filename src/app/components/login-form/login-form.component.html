@@ -12,23 +12,27 @@
         <img src="../../../assets/images/icons/fb-icon.svg">
         Zaloguj się przez Facebook</button>
     </div>
-      <form class="login-form">
-        <div class="login-item">
-          <label for="email">
-            Twój email:
-          </label>
-          <input id="email" type="email">
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Twój email:</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email">
+          <span *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid">Email wymagany!</span>
         </div>
 
-        <div class="login-item">
-          <label for="password">
-            Twoje hasło:
-          </label>
-          <input id="password" type="password">
+        <div class="form-group">
+          <label for="password">Twoje hasło:</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password">
+          <span *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">Hasło wymagane!</span>
           <p class="forgot-pass"><a href="#">Nie pamiętasz hasła?</a></p>
         </div>
+        <button class="submit-btn" type="submit">Zaloguj się</button>
       </form>
-    <button class="submit-btn" type="submit">Zaloguj się</button>
     <p class="create-acn"><a routerLink="/rejestracja">Jesteś tu pierwszy raz? - załóż konto</a></p>
   </div>
 </div>
