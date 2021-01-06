@@ -58,11 +58,11 @@
   padding-left: 25px;
   padding-right: 45px;
 }
-.form-wrapper .login-form .login-item {
+.form-wrapper .login-form .form-group {
   display: flex;
   flex-direction: column;
 }
-.form-wrapper .login-form .login-item input {
+.form-wrapper .login-form .form-group input {
   padding: 1em 2em;
   height: 42px;
   width: 380px;
@@ -72,7 +72,7 @@
   border: none;
   margin-bottom: 30px;
 }
-.form-wrapper .login-form .login-item label {
+.form-wrapper .login-form .form-group label {
   margin-bottom: 10px;
   font-size: 18px;
 }
