@@ -9,7 +9,8 @@
       </button>
       <button class="btn btn-fb">
         <img src="../../../assets/images/icons/fb-icon.svg">
-        Zaloguj się przez Facebook</button>
+        Zaloguj się przez Facebook
+      </button>
     </div>
 
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
@@ -17,7 +18,7 @@
         <label
           for="name">
           Twoje imię:
-          <span>*</span>
+          <span class="asterix">*</span>
         </label>
         <input
           id="name"
@@ -28,7 +29,7 @@
         <label
           for="surname">
           Twoje nazwisko:
-          <span>*</span>
+          <span class="asterix">*</span>
         </label>
         <input
           id="surname"
@@ -39,20 +40,31 @@
         <label
           for="email">
           Twój email:
-          <span>*</span>
+          <span class="asterix">*</span>
         </label>
         <input
           id="email"
           type="email"
           formControlName="email">
+        <span
+          *ngIf="registerForm.get('email').invalid && registerForm.get('email').value.length > 0">
+          Wprowadź poprawny email!
+        </span>
+        <span
+          *ngIf=" (registerForm.get('email').touched && registerForm.get('email').invalid && !(registerForm.get('email').value.length > 0)) ">
+          Wprowadź email!
+        </span>
       </div>
       <div
         class="user-password"
         formGroupName="userPassword">
         <div class="form-group">
-          <label for="password">
+          <label
+            for="password"
+          [matTooltip]="'Haslo powinno składać się z co najmniej 6 znaków'" >
             Twoje hasło:
-            <span>*</span>
+            <span class="asterix">*</span>
+
           </label>
           <input
             class="password-input"
@@ -63,29 +75,32 @@
         <div class="form-group">
           <label for="confirmPassword">
             Powtórz hasło:
-            <span>*</span>
+            <span class="asterix">*</span>
           </label>
           <input
             class="password-input"
             id="confirmPassword"
             type="password"
             formControlName="confirmPassword">
+          <span
+            class="confirm-password-warning"
+            *ngIf="registerForm.controls.userPassword.errors?.passwordNotTheSame &&
+          ((registerForm.get('userPassword.password').value.length > 0) &&
+          (registerForm.get('userPassword.confirmPassword').value.length > 0))">
+          Podane hasła nie zgadzają się!
+          </span>
         </div>
-        <span
-          class="confirm-password-warning"
-          *ngIf="registerForm.get('userPassword').errors &&
-          ((registerForm.get('userPassword.password').dirty && registerForm.get('userPassword.password').value.length > 0) &&
-          (registerForm.get('userPassword.confirmPassword').dirty && registerForm.get('userPassword.confirmPassword').value.length > 0))">
-          Podane hasła nie zgadzają się!</span>
       </div>
 
       <button
         class="submit-btn"
-        type="submit">
-        <span>Zarejestruj się</span>
+        type="submit"
+        #button
+        [disabled]="registerForm.invalid">
+        <span [matTooltip]="registerForm.invalid ? 'Wypełnij wymagane pola' : ''">Zarejestruj się</span>
       </button>
     </form>
-   <p><a routerLink="/logowanie">Masz już konto? zaloguj się</a></p>
+    <p><a routerLink="/logowanie">Masz już konto? zaloguj się</a></p>
   </div>
 </div>
 <app-footer></app-footer>
