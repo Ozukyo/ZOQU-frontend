@@ -26,7 +26,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { CategoriesPageComponent } from './components/categories/categories-page/categories-page.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

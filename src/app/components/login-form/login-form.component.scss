@@ -86,9 +86,10 @@
         outline: none;
         border: none;
         margin-bottom: 30px;
+        font-size: 15px;
 
         &.ng-invalid.ng-touched {
-          border: 1px solid red;
+          border: 1px solid rgba(220, 23, 23, 0.5);
           margin-bottom: 5px;
         }
 
@@ -100,7 +101,9 @@
       }
 
       span {
-        color: red;
+        color: rgba(220, 23, 23, 0.5);
+        margin-left: 10px;
+        //transition: all 0.2s ease-in;
       }
     }
     .submit-btn {
@@ -116,6 +119,11 @@
       margin-bottom: 40px;
       cursor: pointer;
       align-self: center;
+
+      &[disabled] {
+        opacity: 0.7;
+        cursor: auto;
+      }
     }
 
   }
