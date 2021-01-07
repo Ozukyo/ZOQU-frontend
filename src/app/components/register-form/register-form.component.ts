@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
   selector: 'app-register-form',
@@ -9,6 +10,7 @@ import {Observable} from 'rxjs';
 })
 export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup;
+  changedValue = false;
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -16,10 +18,15 @@ export class RegisterFormComponent implements OnInit {
       surname: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       userPassword: new FormGroup({
-        password: new FormControl('', [Validators.required, Validators.min(6)]),
-        confirmPassword: new FormControl('', [Validators.required, Validators.min(6)])
+        password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)])
       }, {validators: this.passwordCheck.bind(this)})
     });
+
+    this.detectChangedValue('email');
+    this.detectChangedValue('userPassword.password');
+    this.detectChangedValue('userPassword.confirmPassword');
+
   }
 
   onSubmit(): void {
@@ -32,6 +39,16 @@ export class RegisterFormComponent implements OnInit {
       return {passwordNotTheSame: true};
     }
     return null;
+  }
+
+  detectChangedValue(controlName: string): void {
+    this.registerForm.get(controlName).valueChanges
+      .pipe(debounceTime(1000))
+      .subscribe(value => {
+        console.log(value);
+        this.changedValue = true;
+      });
+    this.changedValue = false;
   }
 
   // asyncPasswordCheck(group: FormGroup): Promise<any> | Observable<any> {

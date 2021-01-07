@@ -86,6 +86,16 @@
           margin-bottom: 5px;
         }
 
+        &.ng-invalid.ng-pristine.ng-touched {
+          border: 1px solid rgba(220, 23, 23, 0.5);
+          margin-bottom: 5px;
+        }
+
+      }
+
+      .email-input.ng-invalid.ng-dirty {
+        border: 1px solid rgba(220, 23, 23, 0.5);
+        margin-bottom: 5px;
       }
 
       label {

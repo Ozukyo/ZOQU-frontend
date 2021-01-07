@@ -45,9 +45,10 @@
         <input
           id="email"
           type="email"
-          formControlName="email">
+          formControlName="email"
+          class="email-input">
         <span
-          *ngIf="registerForm.get('email').invalid && registerForm.get('email').value.length > 0">
+          *ngIf="changedValue && registerForm.get('email').invalid && registerForm.get('email').value.length > 0">
           Wprowadź poprawny email!
         </span>
         <span
@@ -71,6 +72,8 @@
             id="password"
             type="password"
             formControlName="password">
+          <span *ngIf="registerForm.get('userPassword.password').touched && registerForm.get('userPassword.password').invalid && !(registerForm.get('userPassword.password').value.length > 0)">Wprowadź hasło!</span>
+          <span *ngIf="registerForm.get('userPassword.password').dirty && (registerForm.get('userPassword.password').value.length < 6)">Hasło powinno składać się z co najmniej 6 znaków</span>
         </div>
         <div class="form-group">
           <label for="confirmPassword">
@@ -84,7 +87,7 @@
             formControlName="confirmPassword">
           <span
             class="confirm-password-warning"
-            *ngIf="registerForm.controls.userPassword.errors?.passwordNotTheSame &&
+            *ngIf="changedValue && registerForm.controls.userPassword.errors?.passwordNotTheSame &&
           ((registerForm.get('userPassword.password').value.length > 0) &&
           (registerForm.get('userPassword.confirmPassword').value.length > 0))">
           Podane hasła nie zgadzają się!
