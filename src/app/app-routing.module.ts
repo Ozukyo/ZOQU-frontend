@@ -8,6 +8,7 @@ import {ProfilePageComponent} from './components/profile-page/profile-page.compo
 import {PersonalInfoEditPageComponent} from './components/personal-info-edit-page/personal-info-edit-page.component';
 import {CategoriesComponent} from './components/categories/categories.component';
 import {CategoriesPageComponent} from './components/categories/categories-page/categories-page.component';
+import {AddingAnnouncementPageComponent} from './components/adding-announcement-page/adding-announcement-page.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   {path: 'regulamin', component: MainPageComponent},
   {path: 'o-nas', component: MainPageComponent},
   {path: 'ogloszenie', component: SingleAnnouncementViewComponent},
+  {path: 'dodawanie-ogloszenia', component: AddingAnnouncementPageComponent},
   {path: 'profil', component: ProfilePageComponent},
   // children: [
   //     {path: 'edycja', component: PersonalInfoEditPageComponent}

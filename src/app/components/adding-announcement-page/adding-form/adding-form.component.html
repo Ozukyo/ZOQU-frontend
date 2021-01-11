@@ -1,78 +1,109 @@
 <div class="content-wrapper">
   <div class="adding-form-background">
     <div class="forms-container">
-      <h3 class="add-announcement-title">Dodawanie ogłoszenia</h3>
-      <div class="title-form form-item">
-        <label class="label-title" for="title">Tytuł:
+      <form [formGroup]="addingForm" (ngSubmit)="onSubmit()">
+        <h3 class="add-announcement-title">Dodawanie ogłoszenia</h3>
+        <div class="title-form form-group">
+          <label class="label-title" for="title">Tytuł:
+            <span>*</span>
+            <br>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              formControlName="title">
+          </label>
+          <p>pozostało znaków: 70</p>
+        </div>
+        <div class="category-select form-group">
+          <label class="label-title" for="categories">Wybór kategorii:
+            <span>*</span>
+            <br>
+            <select
+              name="categories"
+              id="categories"
+              formControlName="category">
+              <option value="Ona">Ona</option>
+              <option value="On">On</option>
+              <option value="Kosmetyki">Kosmetyki</option>
+              <option value="Dom i ogrod">Dom i ogród</option>
+            </select>
+          </label>
+        </div>
+        <div class="description-form form-group">
+          <label class="label-title" for="description">Opis:</label>
           <span>*</span>
           <br>
-          <input type="text" id="title" name="title">
-        </label>
-        <p>pozostało znaków: 70</p>
-      </div>
-      <div class="category-select form-item">
-        <label class="label-title" for="categories">Wybór kategorii:
-          <span>*</span>
-          <br>
-          <select name="categories" id="categories">
-            <option value="#">Ona</option>
-            <option value="#">On</option>
-            <option value="#">Kosmetyki</option>
-            <option value="#">Dom i ogród</option>
-          </select>
-        </label>
-      </div>
-      <div class="description-form form-item">
-        <label class="label-title" for="description">Opis:</label>
-        <span>*</span>
-        <br>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
-        <p>pozostało znaków: 7000</p>
-      </div>
-      <div class="material-color-detail form-item">
-        <label class="label-title" for="color">Kolor produktu:
-          <br>
-          <select name="color" id="color" class="select-medium">
-            <option value="#">Niebieski</option>
-            <option value="#">Czarny</option>
-            <option value="#">Biały</option>
-            <option value="#">Zielony</option>
-          </select>
-        </label><br>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            formControlName="content">
+        </textarea>
+          <p>pozostało znaków: 7000</p>
+        </div>
 
-        <label class="label-title" for="material">Materiał produktu:
-          <br>
-          <select name="material" id="material"  class="select-medium">
-            <option value="#">Akryl</option>
-            <option value="#">Drewno</option>
-            <option value="#">Szkło</option>
-            <option value="#">Kryształ</option>
-          </select>
-        </label>
-      </div>
-      <div class="photos form-item">
-        <h3 class="photos-title">Zdjęcia:</h3>
-        <div class="photos-container">
-          <div class="photos-wrapper">
-            <div class="photo-icon"><img src="../../../../assets/icons/add-photo-icon.svg" alt=""></div>
-            <p>Nie wybrano zdjęcia</p>
-            <input #inputElement class="photo-input-btn" type="file" hidden>
-            <button (click)="activateInput(inputElement)" class="add-photo-btn">Wybierz zdjęcie</button>
+        <div
+          class="product-details"
+          formGroupName="productDetails">
+          <div class="color-detail form-group">
+            <label class="label-title" for="color">Kolor produktu:</label>
+            <br>
+            <select
+              name="color"
+              id="color"
+              class="select-medium"
+              formControlName="color">
+              <option value="Niebieski">Niebieski</option>
+              <option value="Czarny">Czarny</option>
+              <option value="Biały">Biały</option>
+              <option value="Zielony">Zielony</option>
+            </select>
+            <br>
+            <div class="material-detail form-group">
+              <label class="label-title" for="material">Materiał produktu:</label>
+              <br>
+              <select
+                name="material"
+                id="material"
+                class="select-medium"
+                formControlName="material">
+                <option value="Akryl">Akryl</option>
+                <option value="Drewno">Drewno</option>
+                <option value="Szkło">Szkło</option>
+                <option value="Kryształ">Kryształ</option>
+              </select>
+            </div>
           </div>
         </div>
-        <p>Maksymalny rozmiar zdjęcia to 5 MB</p>
-      </div>
-      <div class="price-input form-item">
-        <label class="label-title" for="price">Cena:
-          <span>*</span>
-          <br>
-          <input type="text" id="price" name="price" class="input-small">
-        </label>
-      </div>
-      <div class="button-element form-item">
-        <a href="#" class="button">Dodaj ogłoszenie</a>
-      </div>
-
+        <div class="photos form-group">
+          <h3 class="photos-title">Zdjęcia:</h3>
+          <div class="photos-container">
+            <div class="photos-wrapper">
+              <div class="photo-icon"><img src="../../../../assets/icons/add-photo-icon.svg" alt=""></div>
+              <p>Nie wybrano zdjęcia</p>
+              <input #inputElement class="photo-input-btn" type="file" hidden>
+              <button (click)="activateInput(inputElement)" class="add-photo-btn">Wybierz zdjęcie</button>
+            </div>
+          </div>
+          <p>Maksymalny rozmiar zdjęcia to 5 MB</p>
+        </div>
+        <div class="price-input form-group">
+          <label class="label-title" for="price">Cena: </label>
+            <span>*</span>
+            <br>
+            <input
+              type="text"
+              id="price"
+              name="price"
+              class="input-small"
+              formControlName="price">
+        </div>
+        <div class="button-element form-group">
+          <button class="button" type="submit">Dodaj ogłoszenie</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
