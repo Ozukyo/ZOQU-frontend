@@ -9,54 +9,101 @@
       </button>
       <button class="btn btn-fb">
         <img src="../../../assets/images/icons/fb-icon.svg">
-        Zaloguj się przez Facebook</button>
+        Zaloguj się przez Facebook
+      </button>
     </div>
-    <form class="login-form">
-      <div class="login-item">
-        <label for="name">
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <div class="form-group">
+        <label
+          for="name">
           Twoje imię:
-          <span>*</span>
+          <span class="asterix">*</span>
         </label>
-
-        <input id="name" type="text">
+        <input
+          id="name"
+          type="text"
+          formControlName="name">
       </div>
-
-      <div class="login-item">
-        <label for="surname">
+      <div class="form-group">
+        <label
+          for="surname">
           Twoje nazwisko:
-          <span>*</span>
-
+          <span class="asterix">*</span>
         </label>
-        <input id="surname" type="text">
+        <input
+          id="surname"
+          type="text"
+          formControlName="surname">
       </div>
-
-      <div class="login-item">
-        <label for="email">
+      <div class="form-group">
+        <label
+          for="email">
           Twój email:
-          <span>*</span>
+          <span class="asterix">*</span>
         </label>
-        <input id="email" type="email">
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="email-input">
+        <span
+          *ngIf="changedValue && registerForm.get('email').invalid && registerForm.get('email').value.length > 0">
+          Wprowadź poprawny email!
+        </span>
+        <span
+          *ngIf=" (registerForm.get('email').touched && registerForm.get('email').invalid && !(registerForm.get('email').value.length > 0)) ">
+          Wprowadź email!
+        </span>
+      </div>
+      <div
+        class="user-password"
+        formGroupName="userPassword">
+        <div class="form-group">
+          <label
+            for="password"
+          [matTooltip]="'Haslo powinno składać się z co najmniej 6 znaków'" >
+            Twoje hasło:
+            <span class="asterix">*</span>
+
+          </label>
+          <input
+            class="password-input"
+            id="password"
+            type="password"
+            formControlName="password">
+          <span *ngIf="registerForm.get('userPassword.password').touched && registerForm.get('userPassword.password').invalid && !(registerForm.get('userPassword.password').value.length > 0)">Wprowadź hasło!</span>
+          <span *ngIf="registerForm.get('userPassword.password').dirty && (registerForm.get('userPassword.password').value.length < 6)">Hasło powinno składać się z co najmniej 6 znaków</span>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">
+            Powtórz hasło:
+            <span class="asterix">*</span>
+          </label>
+          <input
+            class="password-input"
+            id="confirmPassword"
+            type="password"
+            formControlName="confirmPassword">
+          <span
+            class="confirm-password-warning"
+            *ngIf="changedValue && registerForm.controls.userPassword.errors?.passwordNotTheSame &&
+          ((registerForm.get('userPassword.password').value.length > 0) &&
+          (registerForm.get('userPassword.confirmPassword').value.length > 0))">
+          Podane hasła nie zgadzają się!
+          </span>
+        </div>
       </div>
 
-      <div class="login-item">
-        <label for="password">
-          Twoje hasło:
-          <span>*</span>
-        </label>
-        <input id="password" type="password">
-      </div>
-
-      <div class="login-item">
-        <label for="password-repeat">
-          Powtórz hasło:
-          <span>*</span>
-        </label>
-        <input id="password-repeat" type="password">
-      </div>
-
+      <button
+        class="submit-btn"
+        type="submit"
+        #button
+        [disabled]="registerForm.invalid">
+        <span [matTooltip]="registerForm.invalid ? 'Wypełnij wymagane pola' : ''">Zarejestruj się</span>
+      </button>
     </form>
-    <button class="submit-btn" type="submit">Zarejestruj się</button>
-   <p><a routerLink="/logowanie">Masz już konto? zaloguj się</a></p>
+    <p><a routerLink="/logowanie">Masz już konto? zaloguj się</a></p>
   </div>
 </div>
 <app-footer></app-footer>

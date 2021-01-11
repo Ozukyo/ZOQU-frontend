@@ -63,8 +63,11 @@
 
   }
 
-  .login-form {
-    .login-item {
+  .register-form {
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
       display: flex;
       flex-direction: column;
 
@@ -78,32 +81,61 @@
         border: none;
         margin-bottom: 30px;
 
+        &.ng-invalid.ng-dirty {
+          border: 1px solid rgba(220, 23, 23, 0.5);
+          margin-bottom: 5px;
+        }
+
+        &.ng-invalid.ng-pristine.ng-touched {
+          border: 1px solid rgba(220, 23, 23, 0.5);
+          margin-bottom: 5px;
+        }
+
+      }
+
+      .email-input.ng-invalid.ng-dirty {
+        border: 1px solid rgba(220, 23, 23, 0.5);
+        margin-bottom: 5px;
       }
 
       label {
         margin-bottom: 10px;
         font-size: 18px;
 
-        span {
+        .asterix {
           color: #3b8095;
         }
       }
+
+      span{
+        color: rgba(220, 23, 23, 0.5);
+        margin-left: 10px;
+        //transition: all 0.2s ease-in;
+      }
     }
+
+    .submit-btn {
+      width: 190px;
+      height: 43px;
+      background: #7C4B77;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 18px;
+      outline: none;
+      border: none;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      cursor: pointer;
+      align-self: center;
+
+      &[disabled] {
+        opacity: 0.7;
+        cursor: auto;
+      }
+    }
+
   }
 
-  .submit-btn {
-    width: 190px;
-    height: 43px;
-    background: #7C4B77;
-    border-radius: 12px;
-    color: #fff;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    cursor: pointer;
-  }
 
   a {
     text-decoration: none;
