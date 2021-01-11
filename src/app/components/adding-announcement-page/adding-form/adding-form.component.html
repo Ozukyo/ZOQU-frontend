@@ -11,25 +11,39 @@
               type="text"
               id="title"
               name="title"
+              maxlength="70"
               formControlName="title">
           </label>
-          <p>pozostało znaków: 70</p>
+          <p>pozostało znaków: {{ titleChars - this.addingForm.get('title').value.length }}</p>
         </div>
         <div class="category-select form-group">
-          <label class="label-title" for="categories">Wybór kategorii:
-            <span>*</span>
-            <br>
-            <select
-              name="categories"
-              id="categories"
-              formControlName="category">
-              <option value="Ona">Ona</option>
-              <option value="On">On</option>
-              <option value="Kosmetyki">Kosmetyki</option>
-              <option value="Dom i ogrod">Dom i ogród</option>
-            </select>
-          </label>
+          <label class="label-title" for="categories">Wybór kategorii:</label>
+          <span>*</span>
+          <br>
+          <select
+            name="categories"
+            id="categories"
+            formControlName="category">
+            <option
+              *ngFor="let category of categories"
+              [value]="category.name.toLowerCase()">
+              {{ category.name }}
+            </option>
+          </select>
         </div>
+        <div
+          class="subcategory-select form-group"
+          [hidden]="!this.addingForm.get('category').dirty">
+          <label class="label-title" for="subcategories">Wybór podkategorii: </label>
+          <select name="subcategories" id="subcategories">
+            <option
+              *ngFor="let subcategory of subcategories"
+              [value]="subcategory.name"
+            >{{ subcategory.name }}</option>
+
+          </select>
+        </div>
+
         <div class="description-form form-group">
           <label class="label-title" for="description">Opis:</label>
           <span>*</span>
@@ -39,9 +53,10 @@
             id="description"
             cols="30"
             rows="10"
+            maxlength="7000"
             formControlName="content">
         </textarea>
-          <p>pozostało znaków: 7000</p>
+          <p>pozostało znaków: {{ contentChars - this.addingForm.get('content').value.length }}</p>
         </div>
 
         <div
@@ -91,17 +106,23 @@
         </div>
         <div class="price-input form-group">
           <label class="label-title" for="price">Cena: </label>
-            <span>*</span>
-            <br>
-            <input
-              type="text"
-              id="price"
-              name="price"
-              class="input-small"
-              formControlName="price">
+          <span>*</span>
+          <br>
+          <input
+            type="text"
+            id="price"
+            name="price"
+            class="input-small"
+            maxlength="7"
+            formControlName="price">
         </div>
         <div class="button-element form-group">
-          <button class="button" type="submit">Dodaj ogłoszenie</button>
+          <button
+            class="button"
+            type="submit"
+          >
+            Dodaj ogłoszenie
+          </button>
         </div>
       </form>
     </div>
