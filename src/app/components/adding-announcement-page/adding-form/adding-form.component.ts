@@ -14,8 +14,8 @@ export class AddingFormComponent implements OnInit {
   titleChars = 70;
   contentChars = 7000;
   categories: Category[];
-  // isCategorySelected = false;
-  subcategories: Subcategory[];
+  selectedCategoryName = '';
+  selectedSubcategoryName = '';
 
   constructor(private categoryService: CategoryService) {
   }
@@ -23,7 +23,9 @@ export class AddingFormComponent implements OnInit {
   ngOnInit(): void {
     this.addingForm = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.maxLength(70)]),
-      category: new FormControl('ONA'),
+      category: new FormControl(''),
+      subcategory: new FormControl(''),
+      subSubcategory: new FormControl(''),
       content: new FormControl('', Validators.maxLength(7000)),
       productDetails: new FormGroup({
         color: new FormControl(''),
@@ -36,10 +38,6 @@ export class AddingFormComponent implements OnInit {
     });
 
     this.getCategories();
-
-    // if (this.addingForm.get('category').value.val) {
-    //   this.loadSubcategories(this.addingForm.get('category').value);
-    // }
   }
 
   activateInput(elem: any): void {
@@ -58,13 +56,34 @@ export class AddingFormComponent implements OnInit {
       });
   }
 
-  loadSubcategories(nameOfCategory: string): void {
-    this.categoryService.getCategoryByName(nameOfCategory)
-      .subscribe(category => {
-        this.subcategories = category.subcategories;
-        console.log(category);
-        console.log(category.subcategories);
-      });
+  onSelectedCategory(): void {
+    this.selectedCategoryName = this.addingForm.get('category').value;
   }
+
+  onSelectedSubcategory(): void {
+    this.selectedSubcategoryName = this.addingForm.get('subcategory').value;
+  }
+
+  getCategoryFromCategories(): Category {
+    const categoriesCopy = [...this.categories];
+    return categoriesCopy.filter(category => {
+      return category.name === this.selectedCategoryName;
+    })[0];
+  }
+
+  getSubcategoryFromSubcategories(): Subcategory {
+    // const categoriesCopy = [...this.categories];
+    // const chosenCategory = categoriesCopy.filter(category => {
+    //   return category.name === this.selectedCategoryName;
+    // })[0];
+    console.log(this.selectedSubcategoryName);
+    const chosenCategory = this.getCategoryFromCategories();
+    return chosenCategory.subcategories.filter(subcategory => {
+      console.log(subcategory);
+      return subcategory.name === this.selectedSubcategoryName;
+    })[0];
+
+  }
+
 
 }

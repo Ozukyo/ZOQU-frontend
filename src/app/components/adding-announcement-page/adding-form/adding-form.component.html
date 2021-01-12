@@ -16,33 +16,58 @@
           </label>
           <p>pozostało znaków: {{ titleChars - this.addingForm.get('title').value.length }}</p>
         </div>
-        <div class="category-select form-group">
-          <label class="label-title" for="categories">Wybór kategorii:</label>
-          <span>*</span>
-          <br>
-          <select
-            name="categories"
-            id="categories"
-            formControlName="category">
-            <option
-              *ngFor="let category of categories"
-              [value]="category.name.toLowerCase()">
-              {{ category.name }}
-            </option>
-          </select>
-        </div>
-        <div
-          class="subcategory-select form-group"
-          [hidden]="!this.addingForm.get('category').dirty">
-          <label class="label-title" for="subcategories">Wybór podkategorii: </label>
-          <select name="subcategories" id="subcategories">
-            <option
-              *ngFor="let subcategory of subcategories"
-              [value]="subcategory.name"
-            >{{ subcategory.name }}</option>
+        <div class="categories">
+          <div class="category-select form-group">
+            <label class="label-title" for="categories">Wybór kategorii:</label>
+            <span>*</span>
+            <br>
+            <select
+              name="categories"
+              id="categories"
+              formControlName="category"
+              (change)="onSelectedCategory()">
+              <option
+                *ngFor="let category of categories"
+                [value]="category.name">
+                {{ category.name }}
+              </option>
+            </select>
+          </div>
+          <div
+            class="subcategory-select form-group"
+            *ngIf="this.addingForm.get('category').dirty">
+            <label class="label-title" for="subcategories">Wybór podkategorii I: </label>
+            <select
+              name="subcategories"
+              id="subcategories"
+              formControlName="subcategory"
+             (change)="onSelectedSubcategory()">
+              <option
+                *ngFor="let subcategory of getCategoryFromCategories().subcategories"
+                [value]="subcategory.name"
+              >{{ subcategory.name }}</option>
 
-          </select>
+            </select>
+          </div>
+          <div
+            class="subuSubcategory-select form-group"
+            *ngIf="this.addingForm.get('subcategory').dirty">
+            <label class="label-title" for="subcategories">Wybór podkategorii II: </label>
+            <select
+              name="subSubcategories"
+              id="subSubcategories"
+              formControlName="subSubcategory"
+            >
+              <option
+                *ngFor="let subSubcategory of getSubcategoryFromSubcategories().subcategories"
+                [value]="subSubcategory"
+              >{{ subSubcategory }}</option>
+
+            </select>
+          </div>
+
         </div>
+
 
         <div class="description-form form-group">
           <label class="label-title" for="description">Opis:</label>
