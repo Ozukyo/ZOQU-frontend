@@ -50,14 +50,13 @@
             </select>
           </div>
           <div
-            class="subuSubcategory-select form-group"
-            *ngIf="this.addingForm.get('subcategory').dirty">
+            class="subSubcategory-select form-group"
+            *ngIf="this.addingForm.get('subcategory').dirty && (getSubcategoryFromSubcategories().subcategories)">
             <label class="label-title" for="subcategories">Wybór podkategorii II: </label>
             <select
               name="subSubcategories"
               id="subSubcategories"
-              formControlName="subSubcategory"
-            >
+              formControlName="subSubcategory">
               <option
                 *ngFor="let subSubcategory of getSubcategoryFromSubcategories().subcategories"
                 [value]="subSubcategory"
@@ -144,8 +143,7 @@
         <div class="button-element form-group">
           <button
             class="button"
-            type="submit"
-          >
+            type="submit">
             Dodaj ogłoszenie
           </button>
         </div>

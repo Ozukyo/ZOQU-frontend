@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Category} from '../../../models/Category';
 import {CategoryService} from '../../../services/category.service';
 import {Subcategory} from '../../../models/Subcategory';
@@ -17,31 +17,35 @@ export class AddingFormComponent implements OnInit {
   selectedCategoryName = '';
   selectedSubcategoryName = '';
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService, private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
-    this.addingForm = new FormGroup({
-      title: new FormControl('', [Validators.required, Validators.maxLength(70)]),
-      category: new FormControl(''),
-      subcategory: new FormControl(''),
-      subSubcategory: new FormControl(''),
-      content: new FormControl('', Validators.maxLength(7000)),
-      productDetails: new FormGroup({
-        color: new FormControl(''),
-        material: new FormControl(''),
-      }),
-      productPictures: new FormGroup({
-        picture: new FormControl()
-      }),
-      price: new FormControl('', [Validators.required, Validators.maxLength(5)]),
-    });
-
+    this.createForm();
     this.getCategories();
+
   }
 
   activateInput(elem: any): void {
     elem.click();
+  }
+
+  createForm(): void {
+    this.addingForm = this.fb.group({
+      title: ['', [Validators.required, Validators.maxLength(70)]],
+      category: [''],
+      subcategory: [''],
+      subSubcategory: [''],
+      content: ['', Validators.maxLength(7000)],
+      productDetails: this.fb.group({
+        color: [''],
+        material: ['']
+      }),
+      productPictures: this.fb.group({
+        picture: ['']
+      }),
+      price: ['', [Validators.required, Validators.maxLength(5)]]
+    });
   }
 
   onSubmit(): void {
@@ -53,6 +57,7 @@ export class AddingFormComponent implements OnInit {
     this.categoryService.getCategories()
       .subscribe(data => {
         this.categories = data;
+
       });
   }
 
@@ -72,14 +77,9 @@ export class AddingFormComponent implements OnInit {
   }
 
   getSubcategoryFromSubcategories(): Subcategory {
-    // const categoriesCopy = [...this.categories];
-    // const chosenCategory = categoriesCopy.filter(category => {
-    //   return category.name === this.selectedCategoryName;
-    // })[0];
-    console.log(this.selectedSubcategoryName);
+    console.log('biore subcategorie z subcategorii');
     const chosenCategory = this.getCategoryFromCategories();
     return chosenCategory.subcategories.filter(subcategory => {
-      console.log(subcategory);
       return subcategory.name === this.selectedSubcategoryName;
     })[0];
 
