@@ -77,7 +77,6 @@ export class AddingFormComponent implements OnInit {
   }
 
   getSubcategoryFromSubcategories(): Subcategory {
-    console.log('biore subcategorie z subcategorii');
     const chosenCategory = this.getCategoryFromCategories();
     return chosenCategory.subcategories.filter(subcategory => {
       return subcategory.name === this.selectedSubcategoryName;
