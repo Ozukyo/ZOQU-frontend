@@ -58,6 +58,10 @@
   padding-left: 25px;
   padding-right: 45px;
 }
+.form-wrapper .login-form {
+  display: flex;
+  flex-direction: column;
+}
 .form-wrapper .login-form .form-group {
   display: flex;
   flex-direction: column;
@@ -71,12 +75,25 @@
   outline: none;
   border: none;
   margin-bottom: 30px;
+  font-size: 15px;
+}
+.form-wrapper .login-form .form-group input.ng-invalid.ng-touched {
+  border: 1px solid rgba(220, 23, 23, 0.5);
+  margin-bottom: 5px;
+}
+.form-wrapper .login-form .form-group input.ng-invalid.ng-dirty {
+  border: 1px solid rgba(220, 23, 23, 0.5);
+  margin-bottom: 5px;
 }
 .form-wrapper .login-form .form-group label {
   margin-bottom: 10px;
   font-size: 18px;
 }
-.form-wrapper .submit-btn {
+.form-wrapper .login-form .form-group span {
+  color: rgba(220, 23, 23, 0.5);
+  margin-left: 10px;
+}
+.form-wrapper .login-form .submit-btn {
   width: 190px;
   height: 43px;
   background: #7C4B77;
@@ -88,6 +105,11 @@
   margin-top: 10px;
   margin-bottom: 40px;
   cursor: pointer;
+  align-self: center;
+}
+.form-wrapper .login-form .submit-btn[disabled] {
+  opacity: 0.7;
+  cursor: auto;
 }
 .form-wrapper a {
   text-decoration: none;
