@@ -1,6 +1,6 @@
 # ZOQUBackend
 
-https://github.com/szniemiec/zoqu-back
+https://github.com/Ozukyo/ZOQU-back
 
 # ZOQUFrontend
 
