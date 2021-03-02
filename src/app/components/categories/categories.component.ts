@@ -18,6 +18,8 @@ export class CategoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategoriesNew().subscribe(console.log);
+
     this.categoriesList = this.categoryService.getCategories();
     this.letters = {
       261: 'a',
