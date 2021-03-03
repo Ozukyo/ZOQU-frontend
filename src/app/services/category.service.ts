@@ -12,26 +12,25 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
-  categoriesURL = 'http://localhost:3000/categories';
-  httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
-  };
+  // categoriesURL = 'http://localhost:3000/categories';
+  // httpOptions = {
+  //   headers: new HttpHeaders({'Content-Type': 'application/json'})
+  // };
+  // categoryList: CategoryData[];
 
   constructor(private http: HttpClient) {
   }
-  getCategories(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.categoriesURL);
-  }
+  // getCategories(): Observable<Category[]> {
+  //   return this.http.get<Category[]>(this.categoriesURL);
+  // }
 
-  getCategoriesNew(): Observable<CategoryData> {
-    const newCategoryDataList: CategoryData[] = [];
-    return this.http.get<ICategoryDataDto>(`${environment.apiUrl}categories`)
-      .pipe(map(result => new CategoryData(result[1])
-      ));
+  getMainCategories(): Observable<ICategoryDataDto[]> {
+    // const newCategoryDataList: CategoryData[] = [];
+    return this.http.get<ICategoryDataDto[]>(`${environment.apiUrl}main-categories`);
   }
-
-  getCategory(announcement: Category): Observable<Category> {
-    const url = `${this.categoriesURL}/${announcement.id}`;
-    return this.http.get<Category>(url);
-  }
+  //
+  // getCategory(announcement: Category): Observable<Category> {
+  //   const url = `${this.categoriesURL}/${announcement.id}`;
+  //   return this.http.get<Category>(url);
+  // }
 }

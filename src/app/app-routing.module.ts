@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   // children: [
   //     {path: 'edycja', component: PersonalInfoEditPageComponent}
   //   ]},
-    {path: 'on', component: MainPageComponent, children: [
+    {path: '**', component: MainPageComponent, children: [
         {path: 'moda', component: MainPageComponent, children: [
             {path: 't-shirty', component: MainPageComponent},
             {path: 'koszule', component: MainPageComponent},
@@ -145,7 +145,6 @@ const appRoutes: Routes = [
         {path: 'inne', component: MainPageComponent},
       ]},
     {path: 'akcesoria', component: MainPageComponent},
-
 
 
 ];
