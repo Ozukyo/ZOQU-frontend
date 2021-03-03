@@ -1,25 +1,25 @@
 <div class="container">
   <nav>
     <ul>
-      <li *ngFor="let category of (categoriesList | async)">
+      <li *ngFor="let category of (mainCategoriesList | async)">
         <div class="category">
-          <label><input type="checkbox" id="main-cat"/>
-            <a [routerLink]="'/' + convertLettersToEnglish(category.name.toLowerCase())">
-              {{category.name}}
+          <label>
+            <input type="checkbox" id="main-cat"/>
+            <a >
+              {{category.name | uppercase}}
             </a>
           </label>
           <div class="subcategories-area">
             <div *ngFor="let subcategory of category.subcategories" class="subcat">
               <label><input type="checkbox" id="submain-cat-1"/>
-                <a
-                [routerLink]="convertLettersToEnglish(subcategory.name.toLowerCase())">
+                <a>
                   {{ subcategory.name }}
                 </a>
               </label>
               <ul>
                 <li *ngFor="let subsubcategory of subcategory.subcategories">
-                  <a [routerLink]="convertLettersToEnglish(subcategory.name.toLowerCase()) + '/' + convertLettersToEnglish(subsubcategory.toLowerCase())">
-                    {{subsubcategory}}
+                  <a>
+                    {{subsubcategory.name}}
                   </a>
                 </li>
               </ul>

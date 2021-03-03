@@ -13,7 +13,6 @@
 }
 .container nav > ul li:hover {
   background-color: rgba(113, 191, 191, 0.6);
-  cursor: pointer;
 }
 .container nav a {
   display: block;
@@ -58,7 +57,6 @@ nav .subcategories-area label a {
   color: black;
   padding: 15px 0;
   list-style: none;
-  cursor: pointer;
 }
 
 nav .subcategories-area ul li a {
