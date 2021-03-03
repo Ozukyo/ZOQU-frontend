@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AnnouncementService} from '../../services/announcement.service';
+import {Observable} from 'rxjs';
+import {AnnouncementData} from '../../models/AnnouncementData';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-announcments-view',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementsViewComponent implements OnInit {
 
-  constructor() { }
+  announcementList: Observable<AnnouncementData[]>;
 
-  ngOnInit(): void {
+  constructor(private announcementService: AnnouncementService) {
   }
 
+  ngOnInit(): void {
+    this.announcementList = this.announcementService.getAnnouncements().pipe(tap(console.log));
+
+  }
 }

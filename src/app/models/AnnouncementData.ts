@@ -1,6 +1,6 @@
 import {IAnnouncementDataDto} from './interfaces/IAnnouncementDataDto';
 
-export class Announcement {
+export class AnnouncementData {
   public announcementId: number;
   public publishDate: Date;
   public title: string;

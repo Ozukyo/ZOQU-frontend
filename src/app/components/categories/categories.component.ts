@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {CategoryService} from '../../services/category.service';
 import {tap} from 'rxjs/operators';
-import {ICategoryDataDto} from '../../models/interfaces/ICategoryDataDto';
+
 import {CategoryData} from '../../models/CategoryData';
 
 @Component({
