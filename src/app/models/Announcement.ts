@@ -1,13 +1,25 @@
-import {Data} from '@angular/router';
+import {IAnnouncementDataDto} from './interfaces/IAnnouncementDataDto';
 
-export interface Announcement {
-  id: number;
-  publish_date: Data;
-  title: string;
-  // category_id: Category.ts;
-  description: string;
-  price: number;
-  // details_id: Enum;
-  views: number;
-  is_active: boolean;
+export class Announcement {
+  public announcementId: number;
+  public publishDate: Date;
+  public title: string;
+  public categoryId: number;
+  public description: string;
+  public price: number;
+  public detailsId: number;
+  public views: number;
+  public isActive: boolean;
+
+  constructor(input: IAnnouncementDataDto) {
+    this.announcementId = input.announcement_id;
+    this.publishDate = input.publish_date;
+    this.title = input.title;
+    this.categoryId = input.category_id;
+    this.description = input.description;
+    this.price = input.price;
+    this.detailsId = input.details_id;
+    this.views = input.views;
+    this.isActive = input.is_active;
+  }
 }
