@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   {path: 'profil', component: ProfilePageComponent, children: [
       {path: 'edycja', component: PersonalInfoEditPageComponent}
     ]},
-    {path: '**', component: MainPageComponent},
+    {path: '**', component: SingleAnnouncementViewComponent},
 
 
 ];
