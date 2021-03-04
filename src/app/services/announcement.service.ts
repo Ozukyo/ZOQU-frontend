@@ -27,7 +27,6 @@ export class AnnouncementService {
         });
         return announcementList;
       }));
-
   }
 
   // getAnnouncement(announcement: AnnouncementData): Observable<AnnouncementData> {
