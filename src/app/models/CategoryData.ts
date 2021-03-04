@@ -5,12 +5,14 @@ export class CategoryData {
   public name: string;
   public parentId: number;
   public categoryLevel: number;
+  public label: string;
   public subcategories: CategoryData[];
 
   constructor(input: ICategoryDataDto) {
     this.id = input.id;
     this.name = input.category_name;
     this.parentId = input.parent_id;
+    this.label = input.label;
     this.subcategories = [];
   }
 }

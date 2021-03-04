@@ -21,6 +21,10 @@
     li:hover {
       background-color: rgba(113, 191, 191, 0.6);
     }
+
+    li:hover div label a {
+      cursor: pointer;
+    }
   }
 
   nav a {
@@ -46,8 +50,8 @@
 
 .subcategories-area {
   background-color: $background-color;
-  border-top: 5px solid #d3d3d3;
-  z-index: 1;
+  //border-top: 5px solid #d3d3d3;
+  z-index: 1000;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +59,7 @@
 }
 
 nav ul li:hover .subcategories-area { //pozniej zamiast li dac category
-  top: 100%
+  top: 103%
 }
 
 nav .subcategories-area {
@@ -71,6 +75,7 @@ nav .subcategories-area {
     color: black;
     padding: 15px 0;
     list-style: none;
+    cursor: pointer;
   }
 }
 
@@ -78,5 +83,6 @@ nav .subcategories-area ul li a {
   margin-right: 10px;
   margin-top: 5px;
   color: $font-color_secondary;
+  cursor: pointer;
 }
 
