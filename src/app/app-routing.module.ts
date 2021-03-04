@@ -12,7 +12,7 @@ import {AnnouncementsViewComponent} from './components/announcements-view/announ
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
-  {path: 'home', component: MainPageComponent},
+  {path: 'home', component: AnnouncementsViewComponent},
   {path: 'logowanie', component: LoginFormComponent},
   {path: 'rejestracja', component: RegisterFormComponent},
   {path: 'kontakt', component: MainPageComponent},
