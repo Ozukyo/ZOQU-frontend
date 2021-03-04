@@ -4,12 +4,12 @@
   align-items: center;
 }
 
-.announcments-cards-container {
+.announcements-cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: space-around ;
 
-  .announcment-card {
+  .announcement-card {
     width: 258px;
     height: 326px;
     display: flex;
@@ -29,7 +29,7 @@
     .title {
       color: #6C63FF;
       font-size: 18px;
-      text-transform: uppercase;
+      //text-transform: uppercase;
       margin-top: 10px;
     }
 
@@ -40,13 +40,13 @@
 }
 
 @media (max-width: 840px) {
-  .announcments-cards-container {
+  .announcements-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
 }
   @media (max-width: 600px) {
-    .announcments-cards-container {
+    .announcements-cards-container {
       grid-template-columns: 1fr;
     }
 }
