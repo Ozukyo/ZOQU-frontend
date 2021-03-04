@@ -1,5 +1,5 @@
 export interface IAnnouncementDataDto {
-  announcement_id: number;
+  id: number;
   publish_date: Date;
   title: string;
   category_id: number;

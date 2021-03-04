@@ -12,7 +12,7 @@ export class AnnouncementData {
   public isActive: boolean;
 
   constructor(input: IAnnouncementDataDto) {
-    this.announcementId = input.announcement_id;
+    this.announcementId = input.id;
     this.publishDate = input.publish_date;
     this.title = input.title;
     this.categoryId = input.category_id;
