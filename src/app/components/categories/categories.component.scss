@@ -50,7 +50,7 @@
 
 .subcategories-area {
   background-color: $background-color;
-  //border-top: 5px solid #d3d3d3;
+  border-top: 5px solid #d3d3d3;
   z-index: 1000;
   position: absolute;
   display: flex;
@@ -58,8 +58,8 @@
   top: -9999px;
 }
 
-nav ul li:hover .subcategories-area { //pozniej zamiast li dac category
-  top: 103%
+nav ul li:hover .subcategories-area {
+  top: 100%
 }
 
 nav .subcategories-area {
