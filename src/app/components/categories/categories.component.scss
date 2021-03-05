@@ -25,6 +25,10 @@
     li:hover div label a {
       cursor: pointer;
     }
+
+    li:hover div label a:active {
+      color: $font-color_violet_dark;
+    }
   }
 
   nav a {
