@@ -8,6 +8,7 @@ import {ProfilePageComponent} from './components/profile-page/profile-page.compo
 import {PersonalInfoEditPageComponent} from './components/personal-info-edit-page/personal-info-edit-page.component';
 import {CategoriesComponent} from './components/categories/categories.component';
 import {CategoriesPageComponent} from './components/categories/categories-page/categories-page.component';
+import {AnnouncementsViewComponent} from './components/announcements-view/announcements-view.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},

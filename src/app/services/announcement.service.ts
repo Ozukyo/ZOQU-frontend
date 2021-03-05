@@ -1,13 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Announcement} from '../models/Announcement';
+import {AnnouncementData} from '../models/AnnouncementData';
+import {IAnnouncementDataDto} from '../models/interfaces/IAnnouncementDataDto';
+import {environment} from '../../environments/environment';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnnouncementService {
-  announcementsURL = 'http://localhost:3000/announcements';
+
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
@@ -15,12 +18,19 @@ export class AnnouncementService {
   constructor(private http: HttpClient) {
   }
 
-  getAnnouncements(): Observable<Announcement[]> {
-    return this.http.get<Announcement[]>(this.announcementsURL);
+  getAnnouncements(): Observable<AnnouncementData[]> {
+    return this.http.get<IAnnouncementDataDto[]>(`${environment.apiUrl}announcements`)
+      .pipe(map(data => {
+        const announcementList = [];
+        data.forEach(item => {
+          announcementList.push(new AnnouncementData(item));
+        });
+        return announcementList;
+      }));
   }
 
-  getAnnouncement(announcement: Announcement): Observable<Announcement> {
-    const url = `${this.announcementsURL}/${announcement.id}`;
-    return this.http.get<Announcement>(url);
-  }
+  // getAnnouncement(announcement: AnnouncementData): Observable<AnnouncementData> {
+  //   const url = `${this.announcementsURL}/${announcement.id}`;
+  //   return this.http.get<AnnouncementData>(url);
+  // }
 }
