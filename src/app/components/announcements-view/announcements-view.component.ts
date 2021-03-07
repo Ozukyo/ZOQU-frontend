@@ -3,6 +3,7 @@ import {AnnouncementService} from '../../services/announcement.service';
 import {Observable} from 'rxjs';
 import {AnnouncementData} from '../../models/AnnouncementData';
 import {tap} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-announcements-view',
@@ -13,10 +14,18 @@ export class AnnouncementsViewComponent implements OnInit {
 
   announcementList: Observable<AnnouncementData[]>;
 
-  constructor(private announcementService: AnnouncementService) {
+  constructor(private announcementService: AnnouncementService,
+              private router: Router,
+              private  route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.announcementList = this.announcementService.getAnnouncements().pipe(tap(console.log));
   }
+
+  onSelect(id: number): void {
+    console.log('jestem w metodzie');
+    this.router.navigate([`${id}`]);
+  }
+
 }
