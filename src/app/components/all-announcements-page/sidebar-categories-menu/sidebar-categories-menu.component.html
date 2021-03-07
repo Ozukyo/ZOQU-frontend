@@ -1,9 +1,32 @@
 <div class="menu-container">
-<div class="categories-wrapper">
-  <p>Kategorie</p>
-  <ul class="main-categories">
-    <li class= "main-category-item" *ngFor="let category of categoriesList | async">
-      {{ category.name }}
+<div class="sidebar-categories-wrapper">
+  <p class="categories-title">Kategorie</p>
+  <ul class="main-categories" (click)="onShowSubcategory($event)">
+    <li class= "main-category-item"
+        *ngFor="let category of categoriesList | async">
+      <a class="category-link"
+         [routerLink]="['/',category.label]">
+        {{ category.name | uppercase}}
+        <ng-container *ngIf="category.label !== 'akcesoria'">
+          <span class="fa fa-chevron-down"></span>
+        </ng-container>
+      </a>
+        <ul class="sub-categories">
+          <li class= "sub-category-item" *ngFor="let subcategory of category.subcategories">
+            <a class="subcategory-link" [routerLink]="['/',category.label,subcategory.label]">
+              {{ subcategory.name}}
+            </a>
+
+            <ul class="sub-sub-categories">
+              <li class= "sub-sub-category-item" *ngFor="let subsubcategory of subcategory.subcategories">
+                <a class="subsubcategory-link" [routerLink]="['/',category.label,subcategory.label,subsubcategory.label]">
+                  {{ subsubcategory.name}}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
     </li>
   </ul>
 </div>

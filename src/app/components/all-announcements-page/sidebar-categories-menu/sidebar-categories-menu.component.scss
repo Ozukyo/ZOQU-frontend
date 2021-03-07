@@ -1,18 +1,106 @@
+@import '../../../config';
+
 .menu-container {
-  height: 1000px;
-  width: 50px;
-  background-color: #6b7d85;
-  display: flex;
-  flex-direction: column;
+  //display: flex;
+  //flex-direction: column;
 }
 
-.categories-wrapper {
+.sidebar-categories-wrapper {
+  width: 300px;
+  height: 1400px;
+  background: #f3f3f3;
+  border-radius: 30px;
 
-  .main-categories {
-      .main-category-item {
-        list-style: none;
-        margin: 10px 0;
+  .categories-title {
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #4b4646;
+    border-bottom: 1px dotted rgba(127, 67, 117, 0.6);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    list-style: none;
+    height: 100%;
+    width: 100%;
+
+
+    li {
+      line-height: 40px;
+
+
+      a {
+        color: #333;
+        text-decoration: none;
+        padding-left: 20px;
+        display: block;
+        width: 100%;
+        border-left: 1px solid transparent;
+        position: relative;
+
+
+        &:hover {
+          font-weight: 600;
+          border-left-color: #7C4B77;
+          background-color: rgba(255,255,255, 0.3);
+
+          .fa.fa-chevron-down {
+            color: #84209d;
+            transform: translateY(-50%) rotate(-180deg);
+            transition: all 0.3s ease-in;
+          }
+        }
+
+        .fa.fa-chevron-down {
+          color: #A3A3A3;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+
+        }
+      }
+    }
+
+    .sub-categories {
+      position: static;
+      display:none;
+
+      &.show {
+        display: block;
       }
 
+      li {
+        line-height: 30px;
+
+        a {
+          color: $font-color_violet_dark;
+          padding-left: 60px;
+        }
+      }
+
+      .sub-sub-categories {
+        position: static;
+        display: none;
+
+        &.show {
+          display: block;
+        }
+
+        li {
+          line-height: 25px;
+        }
+
+        a {
+          color: $font-color_violet_dark;
+          padding-left: 100px;
+        }
+      }
+    }
   }
+
 }

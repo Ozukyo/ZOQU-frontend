@@ -9,6 +9,7 @@ import {PersonalInfoEditPageComponent} from './components/personal-info-edit-pag
 import {CategoriesComponent} from './components/categories/categories.component';
 import {CategoriesPageComponent} from './components/categories/categories-page/categories-page.component';
 import {AnnouncementsViewComponent} from './components/announcements-view/announcements-view.component';
+import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
   {path: 'profil', component: ProfilePageComponent, children: [
       {path: 'edycja', component: PersonalInfoEditPageComponent}
     ]},
-    {path: '**', component: SingleAnnouncementViewComponent},
+    {path: '**', component: AllAnnouncementsPageComponent},
 
 
 ];
