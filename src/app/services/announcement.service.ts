@@ -14,6 +14,7 @@ export class AnnouncementService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
+  announcementList: AnnouncementData[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -21,12 +22,15 @@ export class AnnouncementService {
   getAnnouncements(): Observable<AnnouncementData[]> {
     return this.http.get<IAnnouncementDataDto[]>(`${environment.apiUrl}announcements`)
       .pipe(map(data => {
-        const announcementList = [];
         data.forEach(item => {
-          announcementList.push(new AnnouncementData(item));
+          this.announcementList.push(new AnnouncementData(item));
         });
-        return announcementList;
+        return this.announcementList;
       }));
+  }
+
+  getAnnouncement(id: number): AnnouncementData {
+    return this.announcementList.find(announcement => announcement.announcementId === id);
   }
 
   // getAnnouncement(announcement: AnnouncementData): Observable<AnnouncementData> {
