@@ -12,13 +12,14 @@ import {AnnouncementsViewComponent} from './components/announcements-view/announ
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
-  {path: 'home', component: AnnouncementsViewComponent},
+  {path: 'home', component: MainPageComponent},
+  {path: 'losowe', component: SingleAnnouncementViewComponent},
   {path: 'logowanie', component: LoginFormComponent},
   {path: 'rejestracja', component: RegisterFormComponent},
   {path: 'kontakt', component: MainPageComponent},
   {path: 'regulamin', component: MainPageComponent},
   {path: 'o-nas', component: MainPageComponent},
-  {path: 'ogloszenie', component: SingleAnnouncementViewComponent},
+  {path: 'ogloszenie/:id', component: SingleAnnouncementViewComponent},
   {path: 'profil', component: ProfilePageComponent},
   // children: [
   //     {path: 'edycja', component: PersonalInfoEditPageComponent}
