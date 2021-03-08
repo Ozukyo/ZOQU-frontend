@@ -3,7 +3,10 @@ import {AnnouncementData} from '../../models/AnnouncementData';
 import {AnnouncementService} from '../../services/announcement.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
+import {map, take} from 'rxjs/operators';
+import {log} from 'util';
+import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-single-announcement-view',
@@ -11,23 +14,22 @@ import {Observable} from 'rxjs';
   styleUrls: ['./single-announcement-view.component.scss']
 })
 export class SingleAnnouncementViewComponent implements OnInit {
-  @Input() announ;
-  announcement: Observable<AnnouncementData>;
-  id: number;
 
-  constructor(private route: ActivatedRoute,
+  id: number;
+  public announcement: AnnouncementData;
+
+  constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private announcementService: AnnouncementService) {
+    // this.activatedRoute.data
+    //      .pipe(
+    //        take(1))
+    //      .subscribe(response => console.log(response));
   }
 
   ngOnInit(): void {
-    // this.announcement = this.route.paramMap.pipe(
-    //   switchMap((params: ParamMap) =>
-    //     this.announcementService.getAnnouncement(params.get('id')))
-    // );
-    // this.announcement = this.announcementService.getAnnouncement(this.id);
-    // console.log(this.announcement);
-    // });
-    // }
+    this.activatedRoute.url.subscribe(myUrl => console.log);
+    console.log(this.id);
+    this.announcementService.getAnnouncementById(this.id).subscribe(announcement => console.log);
   }
 }

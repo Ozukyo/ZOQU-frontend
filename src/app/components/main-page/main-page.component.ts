@@ -11,7 +11,7 @@ export class MainPageComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.url.subscribe(myUrl => console.log(myUrl));
+    this.activatedRoute.url.subscribe();
   }
 
 }

@@ -20,12 +20,12 @@ export class AnnouncementsViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.announcementList = this.announcementService.getAnnouncements().pipe(tap(console.log));
+    this.announcementList = this.announcementService.getAnnouncements();
   }
 
   onSelect(id: number): void {
     console.log('jestem w metodzie');
-    this.router.navigate([`${id}`]);
+    this.router.navigate([`/ogloszenia/${id}`]);
   }
 
 }
