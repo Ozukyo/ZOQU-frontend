@@ -1,0 +1,126 @@
+@import '../../../config';
+
+.menu-container {
+  //display: flex;
+  //flex-direction: column;
+}
+
+.sidebar-categories-wrapper {
+  width: 300px;
+  height: 800px;
+  background: #F9F9F9;
+  border-radius: 10px;
+
+  .categories-title {
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #4b4646;
+    border-bottom: 1px solid rgba(127, 67, 117, 0.4);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+
+  ul {
+    list-style: none;
+    height: 100%;
+    width: 100%;
+
+
+    li {
+      line-height: 40px;
+
+
+      a {
+        color: #333;
+        text-decoration: none;
+        padding-left: 20px;
+        display: block;
+        width: 100%;
+        border-left: 1px solid transparent;
+        position: relative;
+
+        &.active {
+          color: $font_color_violet_dark;
+          font-weight: 600;
+
+          .fa.fa-chevron-down {
+            color: #84209d;
+            transform: translateY(-50%) rotate(-180deg);
+            transition: all 0.3s ease-in;
+          }
+        }
+
+
+        &:hover {
+          font-weight: 600;
+          //border-left-color: #979696;
+          background-color: rgba(177, 112, 203, 0.1);
+
+          .fa.fa-chevron-down {
+            color: #84209d;
+            transform: translateY(-50%) rotate(-180deg);
+            transition: all 0.3s ease-in;
+          }
+        }
+
+        .fa.fa-chevron-down {
+          color: #A3A3A3;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+
+        }
+      }
+    }
+
+    .sub-categories {
+      position: static;
+      display:none;
+
+      &.show {
+        display: block;
+      }
+
+      li {
+        line-height: 30px;
+
+        a {
+          //color: $font-color_violet_dark;
+          padding-left: 60px;
+
+          &.active {
+            color: $font_color_violet_dark;
+          }
+        }
+      }
+
+      .sub-sub-categories {
+        position: static;
+        display: none;
+
+        &.show {
+          display: block;
+        }
+
+        li {
+          line-height: 25px;
+        }
+
+        a {
+          //color: $font-color_violet_dark;
+          padding-left: 100px;
+
+          &.active {
+            color: $font_color_violet_dark;
+          }
+        }
+      }
+    }
+  }
+
+}

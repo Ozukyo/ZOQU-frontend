@@ -25,9 +25,12 @@ import { AddingAnnouncementPageComponent } from './components/adding-announcemen
 import {AppRoutingModule} from './app-routing.module';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { CategoriesPageComponent } from './components/categories/categories-page/categories-page.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
+// tslint:disable-next-line:max-line-length
+import {SidebarCategoriesMenuComponent} from './components/all-announcements-page/sidebar-categories-menu/sidebar-categories-menu.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AddingFormComponent,
     AddingAnnouncementPageComponent,
     ProfilePageComponent,
-    CategoriesPageComponent
+    CategoriesPageComponent,
+    AllAnnouncementsPageComponent,
+    SidebarCategoriesMenuComponent
   ],
   imports: [
     BrowserModule,
