@@ -27,12 +27,12 @@ export class SidebarCategoriesMenuComponent implements OnInit {
   onShowSubcategory(event: any): void {
     console.log(event.target.nextSibling);
 
-    // if (!event.target.className.includes('show')) {
-    //   event.target.className += ' show';
-    //
-    // } else {
-    //   event.target.className = event.target.className.replace('show', '');
-    // }
+    if (!event.target.className.includes('active')) {
+      event.target.className += ' active';
+
+    } else {
+      event.target.className = event.target.className.replace('active', '');
+    }
 
     const className = event.target.nextSibling.className;
     console.log(className);

@@ -15,6 +15,9 @@
           <li class= "sub-category-item" *ngFor="let subcategory of category.subcategories">
             <a class="subcategory-link" [routerLink]="['/',category.label,subcategory.label]">
               {{ subcategory.name}}
+              <ng-container *ngIf="subcategory.subcategories.length > 0">
+                <span class="fa fa-chevron-down"></span>
+              </ng-container>
             </a>
 
             <ul class="sub-sub-categories">
@@ -26,8 +29,8 @@
             </ul>
           </li>
         </ul>
-
     </li>
   </ul>
+
 </div>
 </div>
