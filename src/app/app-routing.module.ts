@@ -13,29 +13,24 @@ import {AnnouncementViewResolver} from './services/announcement-view.resolver';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: MainPageComponent, children: [
-      {path: 'losowe', component: SingleAnnouncementViewComponent},
-      {path: 'logowanie', component: LoginFormComponent},
-      {path: 'rejestracja', component: RegisterFormComponent},
-      {path: 'kontakt', component: MainPageComponent},
-      {path: 'regulamin', component: MainPageComponent},
-      {path: 'o-nas', component: MainPageComponent},
-      {path: 'ogloszenia', component: AnnouncementsViewComponent, children: [
-          {path: ':id', component: SingleAnnouncementViewComponent,
-            // resolve: {
-            //   clickedAnnouncement: AnnouncementViewResolver
-            // }
-          }]
-      },
-      {path: 'profil', component: ProfilePageComponent}]
+  {path: 'home', component: MainPageComponent},
+  {path: 'losowe', component: SingleAnnouncementViewComponent},
+  {path: 'logowanie', component: LoginFormComponent},
+  {path: 'rejestracja', component: RegisterFormComponent},
+  {path: 'kontakt', component: MainPageComponent},
+  {path: 'regulamin', component: MainPageComponent},
+  {path: 'o-nas', component: MainPageComponent},
+  {path: 'ogloszenia', children: [
+      {path: ':id', component: SingleAnnouncementViewComponent },
+      {path: '', component: AnnouncementsViewComponent, pathMatch: 'full'}]
   },
-  // children: [
-  //     {path: 'edycja', component: PersonalInfoEditPageComponent}
-  //   ]},
-  {
-    path: '**', component: MainPageComponent, children: [
-      {
-        path: 'moda', component: MainPageComponent, children: [
+  // resolve: {
+  //   clickedAnnouncement: AnnouncementViewResolver
+  // }
+  {path: 'profil', component: ProfilePageComponent},
+
+  {path: '**', component: MainPageComponent, children: [
+      {path: 'moda', component: MainPageComponent, children: [
           {path: 't-shirty', component: MainPageComponent},
           {path: 'koszule', component: MainPageComponent},
           {path: 'bluzy', component: MainPageComponent},

@@ -9,10 +9,9 @@ import {AnnouncementData} from '../../../models/AnnouncementData';
 })
 export class AnnouncementInfoComponent implements OnInit {
 
-  @Input() announ: AnnouncementData;
 
-  constructor(private announcementInfo: AnnouncementInfoComponent,
-              private  announcementService: AnnouncementService) {
+
+  constructor(private  announcementService: AnnouncementService) {
   }
 
   ngOnInit(): void {

@@ -36,7 +36,7 @@ export class AnnouncementService {
   }
 
   getAnnouncementById(id: number): Observable<AnnouncementData> {
-    const url = `${environment.apiUrl}/announcements/${id}`;
-    return this.http.get<AnnouncementData>(url);
+    const url = `${environment.apiUrl}announcements/${id}`;
+    return this.http.get<IAnnouncementDataDto>(url).pipe(map(data => new AnnouncementData(data)));
   }
 }

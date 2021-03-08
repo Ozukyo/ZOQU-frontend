@@ -3,10 +3,7 @@ import {AnnouncementData} from '../../models/AnnouncementData';
 import {AnnouncementService} from '../../services/announcement.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Observable, Subscription} from 'rxjs';
-import {map, take} from 'rxjs/operators';
-import {log} from 'util';
-import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-single-announcement-view',
@@ -16,20 +13,18 @@ import {connectableObservableDescriptor} from 'rxjs/internal/observable/Connecta
 export class SingleAnnouncementViewComponent implements OnInit {
 
   id: number;
-  public announcement: AnnouncementData;
+  announcement: AnnouncementData;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private announcementService: AnnouncementService) {
-    // this.activatedRoute.data
-    //      .pipe(
-    //        take(1))
-    //      .subscribe(response => console.log(response));
   }
 
   ngOnInit(): void {
-    this.activatedRoute.url.subscribe(myUrl => console.log);
+    this.activatedRoute.url.subscribe(myUrl => this.id = +myUrl[0].path);
     console.log(this.id);
-    this.announcementService.getAnnouncementById(this.id).subscribe(announcement => console.log);
+    this.announcementService.getAnnouncementById(this.id)
+      .pipe(tap(console.log))
+      .subscribe(data => this.announcement = data);
   }
 }
