@@ -21,12 +21,13 @@ export class AuthTokenInterceptor implements HttpInterceptor {
       req = req.clone({
         setHeaders: {Authorization: obj.value}
       });
-    } else {
-      if (req.url !== 'logowanie') {
-        this.router.navigate(['logowanie']);
-        return;
-      }
     }
+    // else {
+    //   if (req.url !== 'logowanie') {
+    //     this.router.navigate(['logowanie']);
+    //     return;
+    //   }
+    // }
     return next.handle(req);
   }
 }

@@ -38,7 +38,7 @@ export class AuthService implements CanActivate {
   canActivate(): boolean {
     const token = localStorage.getItem('token');
     if (token == null) {
-      this.router.navigate([`${environment.apiUrl}logowanie`]);
+      this.router.navigate(['logowanie']);
       return false;
     }
     return true;
