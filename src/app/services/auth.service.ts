@@ -1,16 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {UserData} from '../models/UserData';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
-import {catchError, tap} from 'rxjs/operators';
+import {tap} from 'rxjs/operators';
+import {CanActivate, Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthService {
-  constructor(private http: HttpClient) {
+export class AuthService implements CanActivate {
+  constructor(private http: HttpClient,
+              private router: Router) {
   }
 
   login(data): Observable<any> {
@@ -32,5 +33,14 @@ export class AuthService {
       console.log(data);
       localStorage.setItem('token', data);
     }
+  }
+
+  canActivate(): boolean {
+    const token = localStorage.getItem('token');
+    if (token == null) {
+      this.router.navigate([`${environment.apiUrl}logowanie`]);
+      return false;
+    }
+    return true;
   }
 }
