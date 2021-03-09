@@ -25,9 +25,10 @@ import { AddingAnnouncementPageComponent } from './components/adding-announcemen
 import {AppRoutingModule} from './app-routing.module';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { CategoriesPageComponent } from './components/categories/categories-page/categories-page.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {AuthTokenInterceptor} from './authToken.interceptor';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,13 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ReactiveFormsModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
