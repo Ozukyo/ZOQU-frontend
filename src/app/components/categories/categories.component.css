@@ -32,9 +32,9 @@
 }
 
 .subcategories-area {
-  background-color: #FDFDFD;
+  background-color: #ffffff;
   border-top: 5px solid #d3d3d3;
-  z-index: 1;
+  z-index: 1000;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -57,12 +57,14 @@ nav .subcategories-area label a {
   color: black;
   padding: 15px 0;
   list-style: none;
+  cursor: pointer;
 }
 
 nav .subcategories-area ul li a {
   margin-right: 10px;
   margin-top: 5px;
   color: #84209d;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=categories.component.css.map */
