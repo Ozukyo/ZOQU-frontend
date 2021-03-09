@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -9,6 +11,11 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
 
+
+  constructor(private authService: AuthService, private router: Router) {
+
+  }
+
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -16,7 +23,16 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    console.log(this.loginForm);
+
+  onLogin(): void {
+    console.log(this.loginForm.value);
+    this.authService.login(this.loginForm.value)
+      .subscribe(result => {
+        if (result) {
+          this.router.navigateByUrl('profil');
+        } else {
+          console.log('nie dziala');
+        }
+      });
   }
 }

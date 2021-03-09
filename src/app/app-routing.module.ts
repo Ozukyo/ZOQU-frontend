@@ -9,6 +9,8 @@ import {PersonalInfoEditPageComponent} from './components/personal-info-edit-pag
 import {CategoriesComponent} from './components/categories/categories.component';
 import {CategoriesPageComponent} from './components/categories/categories-page/categories-page.component';
 import {AnnouncementsViewComponent} from './components/announcements-view/announcements-view.component';
+import {AddingAnnouncementPageComponent} from './components/adding-announcement-page/adding-announcement-page.component';
+import {AuthService} from './services/auth.service';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
@@ -19,11 +21,11 @@ const appRoutes: Routes = [
   {path: 'regulamin', component: MainPageComponent},
   {path: 'o-nas', component: MainPageComponent},
   {path: 'ogloszenie', component: SingleAnnouncementViewComponent},
+  {path: 'dodaj-ogloszenie', component: AddingAnnouncementPageComponent, canActivate: [AuthService]},
   {path: 'profil', component: ProfilePageComponent, children: [
       {path: 'edycja', component: PersonalInfoEditPageComponent}
     ]},
     {path: '**', component: SingleAnnouncementViewComponent},
-
 
 ];
 
