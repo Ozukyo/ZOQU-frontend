@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
 
-  .announcment-wrapper {
+  .announcement-wrapper {
     width: 1336px;
     height: 1695px;
     background: #F9F9F9;
@@ -16,7 +16,7 @@
   }
 
   @media (max-width: 795px) {
-    .announcment-wrapper {
+    .announcement-wrapper {
       grid-template-columns: 1fr;
     }
 

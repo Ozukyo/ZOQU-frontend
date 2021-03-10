@@ -25,9 +25,10 @@ import { AddingAnnouncementPageComponent } from './components/adding-announcemen
 import {AppRoutingModule} from './app-routing.module';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { CategoriesPageComponent } from './components/categories/categories-page/categories-page.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {AuthTokenInterceptor} from './authToken.interceptor';
 import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
 // tslint:disable-next-line:max-line-length
 import {SidebarCategoriesMenuComponent} from './components/all-announcements-page/sidebar-categories-menu/sidebar-categories-menu.component';
@@ -70,7 +71,13 @@ import {SidebarCategoriesMenuComponent} from './components/all-announcements-pag
     ReactiveFormsModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
