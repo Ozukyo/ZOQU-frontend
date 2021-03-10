@@ -10,10 +10,8 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./announcement-info.component.scss']
 })
 export class AnnouncementInfoComponent implements OnInit {
-
-announcement: AnnouncementData;
   id: number;
-
+  announcement: AnnouncementData;
   constructor(private  announcementService: AnnouncementService,
               private activatedRoute: ActivatedRoute) {
   }
