@@ -25,7 +25,7 @@ export class AnnouncementsViewComponent implements OnInit {
 
   onSelect(id: number): void {
     console.log('jestem w metodzie');
-    this.router.navigate([`/ogloszenia/${id}`]);
+    this.router.navigate([`/ogloszenie/${id}`]);
   }
 
 }
