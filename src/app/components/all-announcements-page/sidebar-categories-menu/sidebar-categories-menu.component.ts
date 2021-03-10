@@ -10,7 +10,6 @@ import {Observable} from 'rxjs';
 })
 export class SidebarCategoriesMenuComponent implements OnInit {
   categoriesList: Observable<CategoryData[]>;
-  extendable = false;
 
   constructor(private categoriesService: CategoryService) {
   }
@@ -19,10 +18,6 @@ export class SidebarCategoriesMenuComponent implements OnInit {
     this.categoriesList = this.categoriesService.getAllCategoriesGroupedByLevel();
   }
 
-
-  onClickCategory(): void {
-    this.extendable ? this.extendable = false : this.extendable = true;
-  }
 
   onShowSubcategory(event: any): void {
     console.log(event.target.nextSibling);
