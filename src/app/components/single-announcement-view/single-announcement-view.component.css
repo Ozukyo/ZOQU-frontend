@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
 }
-.container .announcment-wrapper {
+.container .announcement-wrapper {
   width: 1336px;
   height: 1695px;
   background: #F9F9F9;
@@ -13,7 +13,7 @@
   grid-template-columns: repeat(2, 1fr);
 }
 @media (max-width: 795px) {
-  .container .announcment-wrapper {
+  .container .announcement-wrapper {
     grid-template-columns: 1fr;
   }
 }

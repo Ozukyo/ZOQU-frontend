@@ -18,6 +18,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mainCategoriesList = this.categoryService.getAllCategoriesGroupedByLevel().pipe(tap(console.log));
+    this.mainCategoriesList = this.categoryService.getAllCategoriesGroupedByLevel();
   }
 }
