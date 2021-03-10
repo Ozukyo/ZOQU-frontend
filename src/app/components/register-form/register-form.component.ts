@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
+import {UserService} from '../../services/user.service';
+import {UserData} from '../../models/UserData';
+import {IUserDataDto} from '../../models/interfaces/IUserDataDto';
 
 @Component({
   selector: 'app-register-form',
@@ -11,6 +14,10 @@ import {debounceTime} from 'rxjs/operators';
 export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup;
   changedValue = false;
+
+  constructor(private userService: UserService) {
+
+  }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -23,14 +30,19 @@ export class RegisterFormComponent implements OnInit {
       }, {validators: this.passwordCheck.bind(this)})
     });
 
-    this.detectChangedValue('email');
-    this.detectChangedValue('userPassword.password');
-    this.detectChangedValue('userPassword.confirmPassword');
 
   }
 
   onSubmit(): void {
-    console.log(this.registerForm);
+    console.log(this.registerForm.value);
+
+    const userData: IUserDataDto = {
+      first_name: this.registerForm.value.name,
+      last_name: this.registerForm.value.surname,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.userPassword.password
+    };
+    this.userService.addUser(new UserData(userData)).subscribe();
   }
 
   passwordCheck(group: FormGroup): { [s: string]: boolean } {
