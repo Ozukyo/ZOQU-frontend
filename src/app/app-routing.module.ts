@@ -21,7 +21,10 @@ const appRoutes: Routes = [
   {path: 'kontakt', component: MainPageComponent},
   {path: 'regulamin', component: MainPageComponent},
   {path: 'o-nas', component: MainPageComponent},
-  {path: 'ogloszenie', component: SingleAnnouncementViewComponent},
+  {path: 'ogloszenie', children: [
+      {path: ':id', component: SingleAnnouncementViewComponent},
+      {path: '', component: AllAnnouncementsPageComponent, pathMatch: 'full'}
+    ]},
   {path: 'dodaj-ogloszenie', component: AddingAnnouncementPageComponent,
     canActivate: [AuthService]
   },
