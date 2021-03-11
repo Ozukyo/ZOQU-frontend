@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {UserData} from '../../../models/UserData';
 
 @Component({
   selector: 'app-profile-contactbar',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-contactbar.component.scss']
 })
 export class ProfileContactbarComponent implements OnInit {
-
+@Input() userContact: UserData;
   constructor() { }
 
   ngOnInit(): void {

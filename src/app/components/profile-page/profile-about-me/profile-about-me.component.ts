@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {UserData} from '../../../models/UserData';
 
 @Component({
   selector: 'app-profile-about-me',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-about-me.component.scss']
 })
 export class ProfileAboutMeComponent implements OnInit {
-
+@Input() userAbout: UserData;
   constructor() { }
 
   ngOnInit(): void {
