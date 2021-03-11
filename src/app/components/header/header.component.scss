@@ -66,6 +66,8 @@
           text-decoration: none;
           color: $font-color_secondary;
         }
+
+
       }
     }
   }
@@ -96,6 +98,12 @@
     li {
       font-size: 18px;
       padding-right: 30px;
+
+      & a span img {
+        margin-left: 10px;
+
+      }
+
 
     }
 
