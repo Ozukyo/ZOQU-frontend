@@ -32,6 +32,7 @@ import {AuthTokenInterceptor} from './authToken.interceptor';
 import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
 // tslint:disable-next-line:max-line-length
 import {SidebarCategoriesMenuComponent} from './components/all-announcements-page/sidebar-categories-menu/sidebar-categories-menu.component';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import {SidebarCategoriesMenuComponent} from './components/all-announcements-pag
     MatTooltipModule
   ],
   providers: [
+    UserService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,
