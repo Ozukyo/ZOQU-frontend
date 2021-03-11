@@ -28,8 +28,10 @@ const appRoutes: Routes = [
   {path: 'dodaj-ogloszenie', component: AddingAnnouncementPageComponent,
     canActivate: [AuthGuard]
   },
-  {path: 'profil', component: ProfilePageComponent, children: [
-      {path: 'edycja', component: PersonalInfoEditPageComponent}
+  {path: 'profil', children: [
+      {path: ':id', component: ProfilePageComponent},
+      {path: 'edycja', component: PersonalInfoEditPageComponent},
+      {path: '', redirectTo: ':id', pathMatch: 'full'}
     ]},
     {path: '**', component: AllAnnouncementsPageComponent},
 
