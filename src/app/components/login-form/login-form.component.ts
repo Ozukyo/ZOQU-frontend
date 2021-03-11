@@ -29,7 +29,7 @@ export class LoginFormComponent implements OnInit {
     console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value)
       .subscribe(
-        result => this.router.navigateByUrl('profil'),
+        result => this.router.navigateByUrl('home'),
         err => this.error = 'Nie można sie zalogować'
         );
   }
