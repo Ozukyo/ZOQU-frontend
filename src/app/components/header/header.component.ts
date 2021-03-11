@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  isLogged = true;
 
   constructor( public authService: AuthService,
                private router: Router) { }

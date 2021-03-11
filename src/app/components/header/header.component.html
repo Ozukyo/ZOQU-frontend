@@ -1,13 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ZOQU|Handicraft announcement portal</title>
-</head>
-<body>
 <header class="showcase">
   <div class="container">
     <nav class="navigation-small">
@@ -23,19 +13,20 @@
       </div>
       <div class="search-bar">
         <label>
-          <input type="text" placeholder="Szukaj">
+          <input type="text" placeholder= "Szukaj">
         </label>
       </div>
-      <ul>
-        <li><a routerLink="/logowanie">
-<!--               *ngIf="authService.canActivate"-->
-        Zaloguj się</a></li>
-        <li><a routerLink="/rejestracja">Zarejestruj się</a></li>
-        <li><a routerLink="/profil" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Profil</a></li>
-        <li><a (click)="logout()" routerLink="/home" *ngIf="authService.logout">Wyloguj się</a></li>
-        <li>
-          <button><img src="../../../assets/images/icons/empty-heart.svg" alt="" width="28px" height="25px"></button>
-        </li>
+      <ul class="logging-panel">
+        <ng-container *ngIf="authService.isLoggedIn(); else notLogged">
+          <li><a routerLink="/profil" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Profil
+            <span><img src="../../../assets/icons/profile-icon.svg" ></span></a></li>
+          <li><a (click)="logout()" routerLink="/home" *ngIf="authService.logout">Wyloguj się</a></li>
+        </ng-container>
+        <ng-template #notLogged>
+          <li><a routerLink="/logowanie">Zaloguj się</a></li>
+          <li><a routerLink="/rejestracja">Zarejestruj się</a></li>
+        </ng-template>
+        <li><button><img src="../../../assets/images/icons/empty-heart.svg" alt="" width="28px" height="25px"> </button></li>
       </ul>
     </nav>
   </div>
@@ -43,5 +34,3 @@
   <app-categories></app-categories>
 </header>
 
-<!--</body>-->
-<!--</html>-->

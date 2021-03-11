@@ -1,0 +1,14 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+}
+.container .announcements-view {
+  margin-left: 140px;
+}
+
+/*# sourceMappingURL=all-announcements-page.component.css.map */

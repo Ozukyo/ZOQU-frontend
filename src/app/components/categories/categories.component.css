@@ -14,6 +14,12 @@
 .container nav > ul li:hover {
   background-color: rgba(113, 191, 191, 0.6);
 }
+.container nav > ul li:hover div label a {
+  cursor: pointer;
+}
+.container nav > ul li:hover div label a:active {
+  color: #610b74;
+}
 .container nav a {
   display: block;
   text-decoration: none;

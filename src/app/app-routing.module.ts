@@ -11,6 +11,7 @@ import {CategoriesPageComponent} from './components/categories/categories-page/c
 import {AnnouncementsViewComponent} from './components/announcements-view/announcements-view.component';
 import {AddingAnnouncementPageComponent} from './components/adding-announcement-page/adding-announcement-page.component';
 import {AuthGuard} from './auth.guard';
+import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
@@ -20,14 +21,17 @@ const appRoutes: Routes = [
   {path: 'kontakt', component: MainPageComponent},
   {path: 'regulamin', component: MainPageComponent},
   {path: 'o-nas', component: MainPageComponent},
-  {path: 'ogloszenie', component: SingleAnnouncementViewComponent},
+  {path: 'ogloszenie', children: [
+      {path: ':id', component: SingleAnnouncementViewComponent},
+      {path: '', component: AllAnnouncementsPageComponent, pathMatch: 'full'}
+    ]},
   {path: 'dodaj-ogloszenie', component: AddingAnnouncementPageComponent,
     canActivate: [AuthGuard]
   },
   {path: 'profil', component: ProfilePageComponent, children: [
       {path: 'edycja', component: PersonalInfoEditPageComponent}
     ]},
-    {path: '**', component: SingleAnnouncementViewComponent},
+    {path: '**', component: AllAnnouncementsPageComponent},
 
 ];
 

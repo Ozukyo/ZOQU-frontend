@@ -1,9 +1,13 @@
 <div class="flex-container">
   <div class="announcements-cards-container">
-    <div *ngFor="let announcement of (announcementList| async)" class="announcement-card">
-      <img class="card-image" src="../../../assets/images/mock-pick.png" alt="">
-      <h3 class="title">{{announcement.title}}</h3>
+  <div *ngFor="let announcement of (announcementList| async)">
+
+    <div (click)="onSelect(announcement.announcementId)" class="announcement-card">
+
+        <img class="card-image" src="../../../assets/images/mock-pick.png" alt="">
+        <h3 class="title">{{announcement.title}}</h3>
       <p class="price">{{announcement.price}} zł</p>
+      </div>
+    </div>
     </div>
   </div>
-</div>

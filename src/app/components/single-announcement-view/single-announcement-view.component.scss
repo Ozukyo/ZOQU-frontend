@@ -4,19 +4,20 @@
   justify-content: center;
   align-items: center;
 
-  .announcment-wrapper {
+  .announcement-wrapper {
     width: 1336px;
     height: 1695px;
-    background: #F9F9F9;
+    background: #f9f9f9;
     border-radius: 38px;
     //border: 1px solid black;
     margin-bottom: 45px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 0 0.4em #796F79;
   }
 
   @media (max-width: 795px) {
-    .announcment-wrapper {
+    .announcement-wrapper {
       grid-template-columns: 1fr;
     }
 

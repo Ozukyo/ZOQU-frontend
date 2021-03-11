@@ -81,6 +81,9 @@
   font-size: 18px;
   padding-right: 30px;
 }
+.navigation-main ul li a span img {
+  margin-left: 10px;
+}
 .navigation-main ul button {
   margin: fill;
   border: none;

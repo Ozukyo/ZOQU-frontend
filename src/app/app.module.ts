@@ -29,6 +29,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AuthTokenInterceptor} from './authToken.interceptor';
+import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
+// tslint:disable-next-line:max-line-length
+import {SidebarCategoriesMenuComponent} from './components/all-announcements-page/sidebar-categories-menu/sidebar-categories-menu.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import {AuthTokenInterceptor} from './authToken.interceptor';
     AddingFormComponent,
     AddingAnnouncementPageComponent,
     ProfilePageComponent,
-    CategoriesPageComponent
+    CategoriesPageComponent,
+    AllAnnouncementsPageComponent,
+    SidebarCategoriesMenuComponent
   ],
   imports: [
     BrowserModule,
