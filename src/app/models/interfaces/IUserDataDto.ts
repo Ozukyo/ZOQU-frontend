@@ -1,7 +1,10 @@
 export interface IUserDataDto {
-  // id: number;
+  id: number;
+  email: string;
   first_name: string;
   last_name: string;
-  email: string;
+  phone_number: string;
+  description: string;
+  web_page: string;
   password: string;
 }
