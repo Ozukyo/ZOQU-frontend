@@ -15,11 +15,11 @@ export class AuthTokenInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const obj = JSON.parse(localStorage.getItem('token'));
+    const obj = JSON.parse(JSON.stringify(localStorage.getItem('token')));
 
     if (obj != null) {
       req = req.clone({
-        setHeaders: {Authorization: obj.value}
+        setHeaders: {Authorization: obj},
       });
     }
     // else {
