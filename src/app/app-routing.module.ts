@@ -10,7 +10,7 @@ import {CategoriesComponent} from './components/categories/categories.component'
 import {CategoriesPageComponent} from './components/categories/categories-page/categories-page.component';
 import {AnnouncementsViewComponent} from './components/announcements-view/announcements-view.component';
 import {AddingAnnouncementPageComponent} from './components/adding-announcement-page/adding-announcement-page.component';
-import {AuthService} from './services/auth.service';
+import {AuthGuard} from './auth.guard';
 import {AllAnnouncementsPageComponent} from './components/all-announcements-page/all-announcements-page.component';
 
 const appRoutes: Routes = [
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
       {path: '', component: AllAnnouncementsPageComponent, pathMatch: 'full'}
     ]},
   {path: 'dodaj-ogloszenie', component: AddingAnnouncementPageComponent,
-    canActivate: [AuthService]
+    canActivate: [AuthGuard]
   },
   {path: 'profil', component: ProfilePageComponent, children: [
       {path: 'edycja', component: PersonalInfoEditPageComponent}

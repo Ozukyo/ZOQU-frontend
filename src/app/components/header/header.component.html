@@ -17,16 +17,15 @@
         </label>
       </div>
       <ul class="logging-panel">
-        <ng-container *ngIf="isLogged; else notLogged">
-          <li class="profile"><a routerLink="/logowanie">Profil <span><img src="../../../assets/icons/profile-icon.svg" ></span></a></li>
-          <li><a routerLink="/rejestracja">Wyloguj się</a></li>
+        <ng-container *ngIf="authService.isLoggedIn(); else notLogged">
+          <li><a routerLink="/profil" *ngIf="authService.isLoggedIn()" routerLinkActive="active">Profil
+            <span><img src="../../../assets/icons/profile-icon.svg" ></span></a></li>
+          <li><a (click)="logout()" routerLink="/home" *ngIf="authService.logout">Wyloguj się</a></li>
         </ng-container>
         <ng-template #notLogged>
           <li><a routerLink="/logowanie">Zaloguj się</a></li>
           <li><a routerLink="/rejestracja">Zarejestruj się</a></li>
         </ng-template>
-
-
         <li><button><img src="../../../assets/images/icons/empty-heart.svg" alt="" width="28px" height="25px"> </button></li>
       </ul>
     </nav>

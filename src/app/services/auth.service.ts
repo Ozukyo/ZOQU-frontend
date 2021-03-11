@@ -9,7 +9,7 @@ import {CanActivate, Router} from '@angular/router';
   providedIn: 'root'
 })
 
-export class AuthService implements CanActivate {
+export class AuthService {
   constructor(private http: HttpClient,
               private router: Router) {
   }
@@ -19,7 +19,6 @@ export class AuthService implements CanActivate {
       tap((result) => this.saveTokenToLocalstorage(result)),
       // catchError(async err => await console.log(err.message))
     );
-
   }
 
   // private handleError<T>(operation = 'operation', result?: T): Observable<any> {
@@ -27,6 +26,9 @@ export class AuthService implements CanActivate {
   //     return of(result as T);
   //   };
   // }
+  logout(): void {
+    localStorage.removeItem('token');
+  }
 
   private saveTokenToLocalstorage(data): void {
     if (data) {
@@ -35,12 +37,7 @@ export class AuthService implements CanActivate {
     }
   }
 
-  canActivate(): boolean {
-    const token = localStorage.getItem('token');
-    if (token == null) {
-      this.router.navigate(['logowanie']);
-      return false;
-    }
-    return true;
+  isLoggedIn(): boolean {
+   return (localStorage.getItem('token') !== null);
   }
 }

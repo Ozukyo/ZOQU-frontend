@@ -46,6 +46,7 @@
         [disabled]="loginForm.invalid">
         <span [matTooltip]="loginForm.invalid ? 'Wypełnij odpowiednie pola' : ''">Zaloguj się</span>
       </button>
+      <h4 *ngIf="error">{{error}}</h4>
     </form>
     <p class="create-acn"><a routerLink="/rejestracja">Jesteś tu pierwszy raz? - załóż konto</a></p>
   </div>

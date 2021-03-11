@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
+  error: string;
 
 
   constructor(private authService: AuthService, private router: Router) {
@@ -27,12 +28,9 @@ export class LoginFormComponent implements OnInit {
   onLogin(): void {
     console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value)
-      .subscribe(result => {
-        if (result) {
-          this.router.navigateByUrl('profil');
-        } else {
-          console.log('nie dziala');
-        }
-      });
+      .subscribe(
+        result => this.router.navigateByUrl('profil'),
+        err => this.error = 'Nie można sie zalogować'
+        );
   }
 }
