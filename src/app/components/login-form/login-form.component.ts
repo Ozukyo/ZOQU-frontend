@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -12,8 +13,7 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
   error: string;
 
-
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private userService: UserService) {
 
   }
 
@@ -24,13 +24,16 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-
   onLogin(): void {
-    console.log(this.loginForm.value);
+    console.log(this.loginForm.value.email);
+    this.userService.updateUserEmail(this.loginForm.value.email);
+    this.userService.saveEmailToLocalStorage();
     this.authService.login(this.loginForm.value)
       .subscribe(
-        result => this.router.navigateByUrl('home'),
+        result => {
+          this.router.navigate(['home']);
+        },
         err => this.error = 'Nie można sie zalogować'
-        );
+      );
   }
 }
