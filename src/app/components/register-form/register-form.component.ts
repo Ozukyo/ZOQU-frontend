@@ -5,6 +5,8 @@ import {debounceTime} from 'rxjs/operators';
 import {UserService} from '../../services/user.service';
 import {UserData} from '../../models/UserData';
 import {IUserDataDto} from '../../models/interfaces/IUserDataDto';
+import {IRegisterUserDto} from '../../models/interfaces/IRegisterUserDto';
+import {RegisterUserData} from '../../models/RegisterUserData';
 
 @Component({
   selector: 'app-register-form',
@@ -36,13 +38,13 @@ export class RegisterFormComponent implements OnInit {
   onSubmit(): void {
     console.log(this.registerForm.value);
 
-    const userData: IUserDataDto = {
+    const userData: IRegisterUserDto = {
       first_name: this.registerForm.value.name,
       last_name: this.registerForm.value.surname,
       email: this.registerForm.value.email,
-      password: this.registerForm.value.userPassword.password
+      password: this.registerForm.value.userPassword.password,
     };
-    this.userService.addUser(new UserData(userData)).subscribe();
+    this.userService.addUser(new RegisterUserData(userData)).subscribe();
   }
 
   passwordCheck(group: FormGroup): { [s: string]: boolean } {
