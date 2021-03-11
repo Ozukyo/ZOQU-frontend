@@ -31,9 +31,9 @@ export class LoginFormComponent implements OnInit {
     this.authService.login(this.loginForm.value)
       .subscribe(
         result => {
-          this.router.navigate(['home']);
+          this.router.navigate(['moj-profil']);
         },
-        err => this.error = 'Nie można sie zalogować'
+        err => this.error = 'Nieprawidłowy email lub hasło'
       );
   }
 }

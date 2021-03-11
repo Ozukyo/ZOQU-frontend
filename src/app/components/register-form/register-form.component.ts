@@ -7,6 +7,7 @@ import {UserData} from '../../models/UserData';
 import {IUserDataDto} from '../../models/interfaces/IUserDataDto';
 import {IRegisterUserDto} from '../../models/interfaces/IRegisterUserDto';
 import {RegisterUserData} from '../../models/RegisterUserData';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -17,7 +18,7 @@ export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup;
   changedValue = false;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
 
   }
 
@@ -45,6 +46,7 @@ export class RegisterFormComponent implements OnInit {
       password: this.registerForm.value.userPassword.password,
     };
     this.userService.addUser(new RegisterUserData(userData)).subscribe();
+    this.router.navigate(['/home']);
   }
 
   passwordCheck(group: FormGroup): { [s: string]: boolean } {
