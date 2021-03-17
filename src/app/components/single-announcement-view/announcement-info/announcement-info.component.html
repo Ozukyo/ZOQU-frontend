@@ -9,8 +9,8 @@
 
       <div class="right-info-section">
         <div class="p-wrapper">
-          <p class="seller-name">Adam Kowalski</p>
-          <p class="see-more">Zobacz inne produkty sprzedającego</p>
+          <p class="seller-name">{{user?.firstname}} {{user?.lastname}}</p>
+          <p  class="see-more" (click)="onNavigate()"><a>Zobacz inne produkty sprzedającego</a></p>
         </div>
 
         <div class="contact-buttons">
