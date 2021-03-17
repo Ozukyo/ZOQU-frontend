@@ -15,11 +15,20 @@ export class UserService {
   userEmail = '';
 
   constructor(private http: HttpClient) {
-this.userEmail = localStorage.getItem('email');
+    this.userEmail = localStorage.getItem('email');
   }
 
   addUser(user: RegisterUserData): Observable<RegisterUserData> {
     return this.http.post<RegisterUserData>(`${environment.apiUrl}users`, user);
+  }
+
+  getUserById(userId: number): Observable<UserData> {
+    console.log(userId);
+    return this.http.get<IUserDataDto>(`${environment.apiUrl}users/${userId}`).pipe(map(data => {
+        console.log(data);
+        return new UserData(data);
+      }
+    ));
   }
 
   getUserByEmail(userEmail: string): Observable<UserData> {
@@ -29,6 +38,7 @@ this.userEmail = localStorage.getItem('email');
       }
     ));
   }
+
   saveEmailToLocalStorage(): void {
     localStorage.setItem('email', this.userEmail);
   }
