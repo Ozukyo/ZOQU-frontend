@@ -15,6 +15,7 @@ import {AllAnnouncementsPageComponent} from './components/all-announcements-page
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home',  pathMatch: 'full'},
+  {path: 'ogloszenia', component: AllAnnouncementsPageComponent},
   {path: 'home', component: MainPageComponent},
   {path: 'logowanie', component: LoginFormComponent},
   {path: 'rejestracja', component: RegisterFormComponent},

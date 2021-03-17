@@ -46,7 +46,7 @@ export class RegisterFormComponent implements OnInit {
       password: this.registerForm.value.userPassword.password,
     };
     this.userService.addUser(new RegisterUserData(userData)).subscribe();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/ogloszenia']);
   }
 
   passwordCheck(group: FormGroup): { [s: string]: boolean } {
