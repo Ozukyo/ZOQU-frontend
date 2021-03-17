@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {UserData} from '../../models/UserData';
-import {switchMap, take, tap} from 'rxjs/operators';
-import {log} from 'util';
+import {switchMap} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-profile-page',
@@ -12,19 +12,22 @@ import {log} from 'util';
 })
 export class ProfilePageComponent implements OnInit {
   user: UserData;
-  email: string;
 
-  constructor(private userService: UserService) {
+
+  constructor(private userService: UserService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.getUser();
-    console.log(this.user);
-  }
-
-  private getUser(): void {
-    this.userService.getUserEmail().subscribe(data => this.email = data);
-    console.log(this.email);
-    this.userService.getUserByEmail(this.email).subscribe(data => this.user = data);
+    this.activatedRoute.params.pipe(
+      switchMap(params => {
+        if (params && params.id) {
+          return this.userService.getUserById(params.id);
+        } else {
+          return this.userService.getUserEmail().pipe(
+            switchMap(email =>
+              this.userService.getUserByEmail(email)));
+        }
+      })).subscribe(userData => this.user = userData);
   }
 }
