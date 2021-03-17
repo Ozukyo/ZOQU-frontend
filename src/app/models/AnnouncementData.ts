@@ -10,6 +10,7 @@ export class AnnouncementData {
   public detailsId: number;
   public views: number;
   public isActive: boolean;
+  public userId: number;
 
   constructor(input: IAnnouncementDataDto) {
     this.announcementId = input.id;
@@ -21,5 +22,6 @@ export class AnnouncementData {
     this.detailsId = input.details_id;
     this.views = input.views;
     this.isActive = input.is_active;
+    this.userId = input.user_id;
   }
 }

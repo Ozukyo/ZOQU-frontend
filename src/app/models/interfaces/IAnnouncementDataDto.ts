@@ -8,4 +8,5 @@ export interface IAnnouncementDataDto {
   details_id: number;
   views: number;
   is_active: boolean;
+  user_id: number;
 }
