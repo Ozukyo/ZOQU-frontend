@@ -1,9 +1,10 @@
 .-bar-container {
   display: grid;
   justify-items: flex-end;
+  margin-top: 10px;
 
   .bar {
-    width: 940px;
+    width: 1080px;
     height: 145px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
