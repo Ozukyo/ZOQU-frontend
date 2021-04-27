@@ -24,7 +24,7 @@ export class UserService {
 
   getUserById(userId: number): Observable<UserData> {
     console.log(userId);
-    return this.http.get<IUserDataDto>(`${environment.apiUrl}users/${userId}`).pipe(map(data => {
+    return this.http.get<IUserDataDto>(`${environment.apiUrl}users/profil/${userId}`).pipe(map(data => {
         console.log(data);
         return new UserData(data);
       }
